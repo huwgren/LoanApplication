@@ -111,6 +111,46 @@
                             </div>
 
 
+                            <!-- SECTION HEADER - Assets - -->
+                            <div style="border-bottom-style:solid; border-bottom-width: thin; color: #659267" class="mb-3">
+                                <strong>Assets</strong>
+                            </div>
+
+                            <div class="form-row">
+                                <!-- Properties -->
+                                <div class="form-group col-lg-4">
+                                    <label for="xx">Market value of all properties (if any)</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">$</span>
+                                        </div>
+                                        <input type="text" class="form-control" id="xx">
+                                    </div>
+                                </div>
+
+                                <!-- Other assets -->
+                                <div class="form-group col-lg-4">
+                                    <label for="xx">Other assets (if any)</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">$</span>
+                                        </div>
+                                        <input type="text" class="form-control" id="xx">
+                                    </div>
+                                </div>
+
+                                <!-- Saving accounts -->
+                                <div class="form-group col-lg-4">
+                                    <label for="xx">Total balance of saving accounts (if any) </label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">$</span>
+                                        </div>
+                                        <input type="text" class="form-control" id="xx">
+                                    </div>
+                                </div>
+                            </div>
+
                             <!-- SECTION HEADER - Expenses - -->
                             <div style="border-bottom-style:solid; border-bottom-width: thin; color: #659267" class="mb-3">
                                 <strong>Expenses</strong>
@@ -270,28 +310,7 @@
                                 {{--Placeholder for credit cards input--}}
                             </div>
 
-                            <!-- SECTION HEADER - Acknowledgements - -->
-                            <div style="border-bottom-style:solid; border-bottom-width: thin; color: #659267" class="mb-3">
-                                <strong>Acknowledgements</strong>
-                            </div>
 
-
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                <label class="custom-control-label" for="customCheck1">I have considered my future circumstances and financial position and are able to repay the loan</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                <label class="custom-control-label" for="customCheck2">I agree that the information I have given is true and correct</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck3">
-                                <label class="custom-control-label" for="customCheck3">I have reviewed, understand and consent to the <a href="">Electronic Authorisation</a></label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck3">
-                                <label class="custom-control-label" for="customCheck3">I consent to the disclosure of my personal information as set out in the <a href="">Privacy Policy</a>, including Salt&Lime obtaining a credit report </label>
-                            </div>
 
 
                             <!-- BUTTONS -->
@@ -303,10 +322,10 @@
 
                             <div class="form-group row justify-content-center align-items-center mt-3">
                                 <div class="col-sm-2">
-                                    <a class="btn btn-outline-info" href="/aboutYou" role="button">Previous Page</a>
+                                    <a class="btn btn-outline-info btn-sm" href="/aboutYou" role="button">Previous Page</a>
                                 </div>
                                 <div class="col-sm-2">
-                                    <a class="btn btn-success btn-lg" href="#" role="button">Continue</a>
+                                    <a class="btn btn-success btn-lg" href="/Review" role="button">Continue</a>
                                 </div>
                             </div>
 

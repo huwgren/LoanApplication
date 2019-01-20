@@ -40,6 +40,10 @@ Route::get('/financialDetails', function () {
     return view('Application.pages.FinancialDetails');
 });
 
+Route::get('/Review', function () {
+    return view('Application.pages.Review');
+});
+
 /*Paths to load additional user inputs*/
 Route::get('/financialDetails_partials', function () {
     return view('Application.includes.financialDetails_partials');
@@ -48,13 +52,6 @@ Route::get('/financialDetails_partials', function () {
 Route::get('/aboutYou_partials', function () {
     return view('Application.includes.aboutYou_partials');
 });
-
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
 
 
 Auth::routes();

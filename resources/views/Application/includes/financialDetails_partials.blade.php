@@ -75,12 +75,12 @@
 
         <!-- Home loan repayments -->
         <div class="form-group col-lg-6">
-            <label for="homeLoanRepayments">Total repayments for all home loans</label>
+            <label for="homeLoan_repayments">Total repayments for all home loans</label>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                 </div>
-                <input type="text" class="form-control" id="homeLoanRepayments">
+                <input type="text" class="form-control" id="homeLoan_repayments">
                 <div class="input-group-append">
                     <select id="homeLoanRepayments_periodicity" name="homeLoanRepayments_periodicity" class="form-control btn btn-outline-secondary">
                         <option value="weekly" >Weekly</option>
@@ -94,12 +94,12 @@
 
         <!-- Home loan owing -->
         <div class="form-group col-lg-4">
-            <label for="loan_amount">Total owing for all home loans</label>
+            <label for="homeLoan_balance">Total owing for all home loans</label>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                 </div>
-                <input type="text" class="form-control" id="loan_amount">
+                <input type="text" class="form-control" id="homeLoan_balance">
             </div>
         </div>
     </div>
@@ -112,12 +112,12 @@
 
         <!-- Personal loan repayments -->
         <div class="form-group col-lg-6">
-            <label for="personalLoanRepayments">Total repayments for all personal loans</label>
+            <label for="personalLoan_repayments">Total repayments for all personal loans</label>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                 </div>
-                <input type="text" class="form-control" id="personalLoanRepayments">
+                <input type="text" class="form-control" id="personalLoan_repayments">
                 <div class="input-group-append">
                     <select id="personalLoanRepayments_periodicity" name="personalLoanRepayments_periodicity" class="form-control btn btn-outline-secondary">
                         <option value="weekly" >Weekly</option>
@@ -131,12 +131,12 @@
 
         <!-- Personal loan owing -->
         <div class="form-group col-lg-4">
-            <label for="loan_amount">Total owing for all personal loans</label>
+            <label for="personalLoan_balance">Total owing for all personal loans</label>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                 </div>
-                <input type="text" class="form-control" id="loan_amount">
+                <input type="text" class="form-control" id="personalLoan_balance">
             </div>
         </div>
     </div>
@@ -149,23 +149,23 @@
 
         <!-- Credit Cards owing -->
         <div class="form-group col-lg-4">
-            <label for="loan_amount_CC">Total owing for all credit cards</label>
+            <label for="creditCards_owings">Total owing for all credit cards</label>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                 </div>
-                <input type="text" class="form-control" id="loan_amount_CC">
+                <input type="text" class="form-control" id="creditCards_owings">
             </div>
         </div>
 
         <!-- Credit cards maximum -->
         <div class="form-group col-lg-4">
-            <label for="max_amount_CC" style="white-space: nowrap">What is the total maximum limit of all credit cards</label>
+            <label for="creditCards_maxLimit" style="white-space: nowrap">What is the total maximum limit of all credit cards</label>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                 </div>
-                <input type="text" class="form-control" id="max_amount_CC">
+                <input type="text" class="form-control" id="creditCards_maxLimit">
             </div>
         </div>
     </div>
