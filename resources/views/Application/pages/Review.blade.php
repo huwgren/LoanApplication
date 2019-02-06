@@ -297,19 +297,19 @@
 
                     <div class="form-row">
                         {{--Employment status--}}
-                        <div class="form-group col-lg-3">
+                        <div class="form-group col-lg-2">
                             <label for="employmentType">Employment type</label>
                             <input type="text" readonly class="font-weight-bold form-control-plaintext mt-n3" id="employmentType" value="Full-time">
                         </div>
 
                         {{--Occupation type--}}
-                        <div class="form-group col-lg-3">
+                        <div class="form-group col-lg-2">
                             <label for="occupationType">Occupation type</label>
                             <input type="text" readonly class="font-weight-bold form-control-plaintext mt-n3" id="occupationType" value="Accountant">
                         </div>
 
                         {{--Employers name--}}
-                        <div class="form-group col-lg-3">
+                        <div class="form-group col-lg-2">
                             <label for="employerName">Employers name</label>
                             <input type="text" readonly class="font-weight-bold form-control-plaintext mt-n3" id="employerName" value="Company A">
                         </div>
@@ -371,8 +371,8 @@
                         <label class="custom-control-label" for="customCheck3">I have reviewed, understand and consent to the <a href="">Electronic Authorisation</a></label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck3">
-                        <label class="custom-control-label" for="customCheck3">I consent to the disclosure of my personal information as set out in the <a href="">Privacy Policy</a>, including Salt&Lime obtaining a credit report </label>
+                        <input type="checkbox" class="custom-control-input" id="customCheck4">
+                        <label class="custom-control-label" for="customCheck4">I consent to the disclosure of my personal information as set out in the <a href="">Privacy Policy</a>, including Salt&Lime obtaining a credit report </label>
                     </div>
 
 
@@ -388,13 +388,10 @@
                                 <a class="btn btn-outline-info btn-sm" href="/financialDetails" role="button">Previous Page</a>
                             </div>
                             <div class="col-sm-2">
-                                <a class="btn btn-success btn-lg" href="#" role="button">Submit</a>
+                                <a class="btn btn-success btn-lg" href="/NextSteps" role="button">Submit</a>
                             </div>
                         </div>
 
-                        <div class="form-group row justify-content-center">
-
-                        </div>
                     </form>
 
                 </div>

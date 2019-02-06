@@ -44,6 +44,14 @@ Route::get('/Review', function () {
     return view('Application.pages.Review');
 });
 
+Route::get('/NextSteps', function () {
+    return view('Application.pages.NextSteps');
+});
+
+Route::get('/VerifyInfo', function () {
+    return view('Application.pages.VerifyInfo');
+});
+
 /*Paths to load additional user inputs*/
 Route::get('/financialDetails_partials', function () {
     return view('Application.includes.financialDetails_partials');
