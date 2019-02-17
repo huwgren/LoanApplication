@@ -6,38 +6,28 @@
 
     <br>
 
-    <div class="row col-md-8 offset-md-2 col-xs-12">
-        <div class="col-12">
-            <div class="card" style="border-style: none; border-radius: 5px 5px 5px 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
-                {{--<div class="card-header" style=" border-radius:5px 5px 0px 0px ; border-style: none; background-color: #659267; color: white">
-                    <h5 class="mb-0">Your Loan</h5>
-                </div>--}}
-
-
+    <div class="row col-md-12 offset-md-0 col-xs-12 ">
+        {{--<div class="col-12">--}}
+            <div class="card w-100" style="border-style: none; border-radius: 5px 5px 5px 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
                 <div class="card-body" style="border-radius: 5px 5px 5px 5px;;background-color:#efebe4;color: #659267;" >
                     <br>
                     <h3>Unsecured Personal Loan</h3>
                     <h5>Secure online application</h5>
                     <br>
                 </div>
-
             </div>
-        </div>
+        {{--</div>--}}
     </div>
 
     <br>
     <br>
 
-    <div class="row col-md-8 offset-md-2 col-xs-12">
-        <div class="col-12">
-            <div class="card" style="border-style: none; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
-                {{--<div class="card-header" style=" border-radius:5px 5px 0px 0px ; border-style: none; background-color: #659267; color: white">
-                    <h5 class="mb-0">Your Loan</h5>
-                </div>--}}
-
+    <div class="row col-md-12 offset-md-0 col-xs-12">
+        {{--<div class="col-12">--}}
+            <div class="card w-100" style="border-style: none; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
                 <div class="card-body" style="border-radius: 5px 5px 5px 5px;;background-color:#efebe4" >
                     <div class="row">
-                        <div class="col-auto mr-3" >
+                        <div class="col-auto " >
                             <div style="border-bottom-style:solid; border-bottom-width: thin; color: #659267" class="mb-3">
                                 <strong>Some things to check-off</strong>
                             </div>
@@ -47,9 +37,8 @@
                                 <p> <span><i class="fas fa-check"></i></span>  Be receiving regular income </p>
                                 <p> <span><i class="fas fa-check"></i></span>  Not bankrupt (or in process of) </p>
                             </div>
-
                         </div>
-                        <div class="col-auto mr-3" >
+                        <div class="col-auto " >
                             <div style="border-bottom-style:solid; border-bottom-width: thin; color: #659267" class="mb-3">
                                 <strong>How this works</strong>
                             </div>
@@ -59,9 +48,8 @@
                                 <p>3. Accept the contract online</p>
                                 <p>4. Receive the money in your account</p>
                             </div>
-
                         </div>
-                        <div class="col-auto mr-3" >
+                        <div class="col-auto " >
                             <div style="border-bottom-style:solid; border-bottom-width: thin; color: #659267" class="mb-3">
                                 <strong>What you'll need</strong>
                             </div>
@@ -70,21 +58,20 @@
                                 <p> <span><i class="fas fa-file-invoice-dollar fa-2x"></i></span>  Income and expenses </p>
                                 <p> <span><i class="fas fa-file-alt fa-2x"></i></span>  Employment details </p>
                             </div>
-
                         </div>
                     </div>
                 </div>
 
             </div>
-        </div>
+        {{--</div>--}}
     </div>
 
     <br>
     <br>
 
-    <div class="row col-md-8 offset-md-2 col-xs- justify-content-end">
+    <div class="text-center">
         <a class="btn btn-success btn-lg" href="/loanDetails" role="button">Continue</a>
     </div>
-    <br>
 
+    <br>
 @stop

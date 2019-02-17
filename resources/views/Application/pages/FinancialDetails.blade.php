@@ -4,12 +4,12 @@
 
 @section('content')
 
-    <div class="row col-md-8 offset-md-2 col-xs-12" style=" padding-left: 30px; margin-bottom: 30px; color: grey"> <h3>Unsecured Personal Loan</h3> </div>
+    <div class="row col-12" style=" padding-left: 30px; margin-bottom: 30px; color: grey"> <h3>Unsecured Personal Loan</h3> </div>
 
-    <div class="row col-md-8 offset-md-2 col-xs-12">
+    <div class="row col-md-12 offset-md-0 col-xs-12">
         <div class="col-12">
             <div class="row mb-3">
-                <div class="col-sm" style="border-bottom-color:#659267; border-bottom-style: solid; border-bottom-width: 5px; border-top-style: solid; border-top-color: whitesmoke; margin-left: 15px;">
+                <div class="col-sm" style="border-bottom-color:#659267; border-bottom-style: solid; border-bottom-width: 5px; border-top-style: solid; border-top-color: whitesmoke; margin-left: 0px;">
                     Step 1
                     <br>
                     <strong>Loan details</strong>
@@ -24,7 +24,7 @@
                     <br>
                     <strong>Finances</strong>
                 </div>
-                <div class="col-sm"style="border-bottom-color:lightgrey; border-bottom-style: solid; border-top-style: solid; border-top-color: whitesmoke; margin-right: 15px;">
+                <div class="col-sm"style="border-bottom-color:lightgrey; border-bottom-style: solid; border-top-style: solid; border-top-color: whitesmoke; margin-right: 0px;">
                     Step 4
                     <br>
                     <strong>Review and apply</strong>
@@ -33,9 +33,9 @@
         </div>
     </div>
 
-    <div class="row col-md-8 offset-md-2 col-xs-12">
-        <div class="col-12">
-            <div class="card" style="border-style: none; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
+    <div class="row col-md-12 offset-md-0 col-xs-12">
+        {{--<div class="col-12">--}}
+            <div class="card w-100" style="border-style: none; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
                 <div class="card-header" style=" border-radius:5px 5px 0px 0px ; border-style: none; background-color: #659267; color: white">
                     <h5 class="mb-0">Financial details</h5>
                 </div>
@@ -320,23 +320,28 @@
                                 </div>
                             </div>--}}
 
-                            <div class="form-group row justify-content-center align-items-center mt-3">
+                            {{--<div class="form-group row justify-content-center align-items-center mt-3">
                                 <div class="col-sm-2">
                                     <a class="btn btn-outline-info btn-sm" href="/aboutYou" role="button">Previous Page</a>
                                 </div>
                                 <div class="col-sm-2">
                                     <a class="btn btn-success btn-lg" href="/Review" role="button">Continue</a>
                                 </div>
-                            </div>
+                            </div>--}}
 
-                            <div class="form-group row justify-content-center">
-
+                            <div class="row justify-content-between text-center align-items-center">
+                                <div class="col-md-4 col-sm-12 ">
+                                    <a class="btn btn-outline-info btn-sm " href="/aboutYou" role="button">Previous Page</a>
+                                </div>
+                                <div class="col-md-4 col-sm-12 mt-sm-3">
+                                    <a class="btn btn-success btn-lg" href="/Review" role="button">Continue</a>
+                                </div>
                             </div>
                     </form>
 
                 </div>
             </div>
-        </div>
+        {{--</div>--}}
     </div>
 
     {{--Scripts for the add/remove additional income inputs--}}

@@ -11,42 +11,26 @@
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
-
 
 Route::get('/', function () {
     return view('Application.pages.Intro');
 });
 
-Route::get('/template', function () {
-    return view('Application.pages.blank');
-});
 
-Route::get('/Intro', function () {
-    return view('Application.pages.Intro');
-});
 
-Route::get('/loanDetails', function () {
-    return view('Application.pages.LoanDetails');
-});
+Route::get('/loanDetails', 'LoanApplicationController@LoanDetails_View');
+Route::post('/loanDetails', 'LoanApplicationController@LoanDetails_Store');
 
-Route::get('/aboutYou', function () {
-    return view('Application.pages.AboutYou');
-});
+Route::get('/aboutYou', 'LoanApplicationController@PersonalDetails_View');
+Route::post('/aboutYou', 'LoanApplicationController@PersonalDetails_Store');
 
-Route::get('/financialDetails', function () {
-    return view('Application.pages.FinancialDetails');
-});
+Route::get('/financialDetails', 'LoanApplicationController@FinancialDetails_View');
+Route::post('/financialDetails', 'LoanApplicationController@FinancialDetails_Store');
 
-Route::get('/Review', function () {
-    return view('Application.pages.Review');
-});
+Route::get('/Review', 'LoanApplicationController@ReviewDetails_View');
+Route::post('/Review', 'LoanApplicationController@ReviewDetails_Store');
 
-Route::get('/NextSteps', function () {
-    return view('Application.pages.NextSteps');
-});
+Route::get('/NextSteps', 'LoanApplicationController@NextSteps_View');
 
 Route::get('/VerifyInfo', function () {
     return view('Application.pages.VerifyInfo');
@@ -61,6 +45,26 @@ Route::get('/aboutYou_partials', function () {
     return view('Application.includes.aboutYou_partials');
 });
 
+
+
+Route::get('/testing', function () {
+    return view('Application.testing');
+});
+
+
+
+
+Route::get('/template', function () {
+    return view('Application.pages.blank');
+});
+
+Route::get('/Intro', function () {
+    return view('Application.pages.Intro');
+});
+
+/*Route::get('/', function () {
+    return view('welcome');
+});*/
 
 Auth::routes();
 

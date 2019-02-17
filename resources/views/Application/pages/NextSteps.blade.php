@@ -4,9 +4,9 @@
 
 @section('content')
 
-    <div class="row col-md-8 offset-md-2 col-xs-12" style=" padding-left: 30px; margin-bottom: 30px; color: grey"> <h3>Thankyou for applying for a Salt&Lime Personal Loan</h3> </div>
+    <div class="row col-md-12 offset-md-0 col-xs-12" style=" padding-left: 30px; margin-bottom: 30px; color: grey"> <h3>Thankyou for applying for a Salt&Lime Personal Loan</h3> </div>
 
-    <div class="row col-md-8 offset-md-2 col-xs-12">
+    <div class="row col-md-12 offset-md-0 col-xs-12">
         <div class="col-12">
             <div class="card bg-light" style="border-style: none; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
                 <div class="card-header" style="color: #659267">

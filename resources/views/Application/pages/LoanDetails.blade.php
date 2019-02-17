@@ -4,12 +4,12 @@
 
 @section('content')
 
-    <div class="row col-md-8 offset-md-2 col-xs-12" style=" padding-left: 30px; margin-bottom: 30px; color: grey"> <h3>Unsecured Personal Loan</h3> </div>
+    <div class="row col-12" style="  margin-bottom: 30px; color: grey"> <h3>Unsecured Personal Loan</h3> </div>
 
-    <div class="row col-md-8 offset-md-2 col-xs-12">
+    <div class="row col-md-12 offset-md-0 col-xs-12">
         <div class="col-12">
             <div class="row mb-3">
-                <div class="col-sm" style="border-bottom-color:#659267; border-bottom-style: solid; border-bottom-width: 5px; border-top-style: solid; border-top-color: whitesmoke; margin-left: 15px;">
+                <div class="col-sm" style="border-bottom-color:#659267; border-bottom-style: solid; border-bottom-width: 5px; border-top-style: solid; border-top-color: whitesmoke; margin-left: 0px;">
                     Step 1
                     <br>
                     <strong>Loan details</strong>
@@ -24,7 +24,7 @@
                     <br>
                     <strong>Finances</strong>
                 </div>
-                <div class="col-sm"style="border-bottom-color:lightgrey; border-bottom-style: solid; border-top-style: solid; border-top-color: whitesmoke; margin-right: 15px;">
+                <div class="col-sm"style="border-bottom-color:lightgrey; border-bottom-style: solid; border-top-style: solid; border-top-color: whitesmoke; margin-right: 0px;">
                     Step 4
                     <br>
                     <strong>Review and apply</strong>
@@ -33,16 +33,16 @@
         </div>
     </div>
 
-    <div class="row col-md-8 offset-md-2 col-xs-12">
-        <div class="col-12">
-            <div class="card" style="border-style: none; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
+    <div class="row col-md-12 offset-md-0 col-xs-12">
+        {{--<div class="col-12">--}}
+            <div class="card w-100" style="border-style: none; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
                 <div class="card-header" style=" border-radius:5px 5px 0px 0px ; border-style: none; background-color: #659267; color: white">
                     <h5 class="mb-0">Your Loan</h5>
                 </div>
 
                 <div class="card-body" style="border-radius: 0px 0px 5px 5px;;background-color:#efebe4" >
 
-                    <form class="needs-validation" method="post" action="/xxx" novalidate>
+                    <form class="needs-validation" method="post" action="/loanDetails" novalidate>
 
                         @csrf
 
@@ -53,10 +53,14 @@
 
                             <div class="form-row">
                                 <div class="form-group col-md-4">
-                                    <label for="inputEmail4">Email</label>
-                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                                    <small id="emailHelp" class="form-text text-muted" style="white-space: nowrap">We will use this email address to let you know the outcome of your application and the next steps.</small>
+                                    <label for="email_address">Email</label>
+                                    <input type="email" class="form-control" id="email_address" name="email_address" placeholder="Email" value="{{ old('email_address') }}">
+                                    {{--<small id="emailHelp" class="form-text text-muted" style="white-space: nowrap">We will use this email address to let you know the outcome of your application and the next steps.</small>--}}
                                 </div>
+                            </div>
+
+                            <div class="row col-12 mt-n3 mb-3">
+                            <small class="text-muted">We will use this email address to let you know the outcome of your application and the next steps.</small>
                             </div>
 
                             <!-- SECTION HEADER -loan details - -->
@@ -104,7 +108,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">$</span>
                                         </div>
-                                        <input type="text" class="form-control" id="loan_amount" onchange="calculate()">
+                                        <input type="text" class="form-control" id="loan_amount" name="loan_amount" onchange="calculate()">
                                     </div>
                                 </div>
 
@@ -112,7 +116,7 @@
                                 <div class="form-group col-lg-4">
                                     <label for="loan_duration">Loan duration</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="loan_duration" onchange="calculate()">
+                                        <input type="text" class="form-control" id="loan_duration" name="loan_duration" onchange="calculate()">
                                         <div class="input-group-append">
                                             <select id="loan_periodicity" name="loan_periodicity" class="form-control btn btn-outline-secondary" onchange="calculate()">
                                                 <option value="months" >Months</option>
@@ -132,7 +136,7 @@
 
                                 <!-- Repayment table -->
                                 <div class="row mt-4" >
-                                    <div class="col-12">
+                                    <div class="col-12 table-responsive">
                                         <table class="table table-bordered" >
                                             <thead class="">
                                             <tr class="table-info">
@@ -192,16 +196,17 @@
                             </div>
                         </div>--}}
 
-                        <div class="form-group row justify-content-center">
-                            <div class="col-sm-2">
-                                <a class="btn btn-success btn-lg" href="/aboutYou" role="button">Continue</a>
+                        <div class="{{--form-group row justify-content-center--}} text-center">
+                            <div class="col-12">
+                                {{--<a class="btn btn-success btn-lg" href="/aboutYou" role="button">Continue</a>--}}
+                                <button type="submit" class="btn btn-success btn-lg">Continue</button>
                             </div>
                         </div>
                     </form>
 
                 </div>
             </div>
-        </div>
+        {{--</div>--}}
     </div>
 
     {{--Calculate the repayments--}}

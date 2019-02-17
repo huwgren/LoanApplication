@@ -13,7 +13,7 @@
     <div class="mb-2" style="background-color: seashell; border-top-style: solid; border-top-width: thin;border-bottom-style: solid; border-bottom-width: thin; padding-top: 10px; padding-left: 10px;padding-right: 10px">
 
         <!-- address -->
-        <div class="form-group row col-12">
+        <div class="form-group row col-8">
             <label for="inputAddress">Address</label>
             <input type="text" class="form-control" id="inputAddress" placeholder="e.g. Unit 3, 1234 Main St, Sydney, NSW, 2000">
         </div>
