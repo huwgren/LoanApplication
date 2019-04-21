@@ -70,7 +70,7 @@
     <br>
 
     <div class="text-center">
-        <a class="btn btn-success btn-lg" href="/loanDetails" role="button">Continue</a>
+        <a class="btn btn-success btn-lg" href="/Step1" role="button">Continue</a>
     </div>
 
     <br>

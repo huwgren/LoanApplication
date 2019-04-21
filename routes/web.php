@@ -18,19 +18,23 @@ Route::get('/', function () {
 
 
 
-Route::get('/loanDetails', 'LoanApplicationController@LoanDetails_View');
-Route::post('/loanDetails', 'LoanApplicationController@LoanDetails_Store');
+Route::get('/Step1', 'LoanApplicationController@LoanDetails_View');
+Route::post('/Step1', 'LoanApplicationController@LoanDetails_Store');
 
-Route::get('/aboutYou', 'LoanApplicationController@PersonalDetails_View');
-Route::post('/aboutYou', 'LoanApplicationController@PersonalDetails_Store');
+Route::get('/Step2', 'LoanApplicationController@PersonalDetails_View');
+Route::post('/Step2', 'LoanApplicationController@PersonalDetails_Store');
 
-Route::get('/financialDetails', 'LoanApplicationController@FinancialDetails_View');
-Route::post('/financialDetails', 'LoanApplicationController@FinancialDetails_Store');
+Route::get('/Step3', 'LoanApplicationController@FinancialDetails_View');
+Route::post('/Step3', 'LoanApplicationController@FinancialDetails_Store');
 
 Route::get('/Review', 'LoanApplicationController@ReviewDetails_View');
 Route::post('/Review', 'LoanApplicationController@ReviewDetails_Store');
 
 Route::get('/NextSteps', 'LoanApplicationController@NextSteps_View');
+
+
+
+
 
 Route::get('/VerifyInfo', function () {
     return view('Application.pages.VerifyInfo');

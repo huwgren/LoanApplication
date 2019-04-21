@@ -13,7 +13,7 @@
                     <h5> Your application has been successfully submitted and we are currently reviewing your details</h5>
                 </div>
                 <div class="card-body text-center">
-                    <p> Your reference number: <strong style="font-size: larger"> 123456789</strong></p>
+                    <p> Your reference number: <strong style="font-size: larger"> {{Session::get('ReferenceID')}}</strong></p>
 
                     <div class="row">
                         <div class=" offset-md-1 col-md-10">

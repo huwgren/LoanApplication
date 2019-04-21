@@ -42,7 +42,7 @@
 
                 <div class="card-body" style="border-radius: 0px 0px 5px 5px;;background-color:#efebe4" >
 
-                    <form class="needs-validation" method="post" action="/loanDetails" novalidate>
+                    <form class="needs-validation" method="post" action="/Step1" novalidate>
 
                         @csrf
 
@@ -53,8 +53,8 @@
 
                             <div class="form-row">
                                 <div class="form-group col-md-4">
-                                    <label for="email_address">Email</label>
-                                    <input type="email" class="form-control" id="email_address" name="email_address" placeholder="Email" value="{{ old('email_address') }}">
+                                    <label for="Email_Address">Email</label>
+                                    <input type="email" class="form-control" id="Email_Address" name="Email_Address" placeholder="Email" value="{{ session('LoanDetails.Email_Address') }}">
                                     {{--<small id="emailHelp" class="form-text text-muted" style="white-space: nowrap">We will use this email address to let you know the outcome of your application and the next steps.</small>--}}
                                 </div>
                             </div>
@@ -72,55 +72,55 @@
 
                                 <!-- loan reason -->
                                 <div class="form-group col-lg-4">
-                                    <label for="loan_reason">Primary Loan Reason</label>
-                                    <select class="form-control" id="loan_reason" name="loan_reason" required>
+                                    <label for="Loan_Reason">Primary Loan Reason</label>
+                                    <select class="form-control" id="Loan_Reason" name="Loan_Reason" required>
                                         <option value="" >Please Select</option>
                                         <optgroup label="Financial">
-                                            <option value="Debt consolidation" >Debt consolidation</option>
-                                            <option value="Investment" >Investment</option>
+                                            <option value="Debt consolidation" {{ session('LoanDetails.Loan_Reason')=='Debt consolidation' ? 'selected' : '' }}>Debt consolidation</option>
+                                            <option value="Investment" {{ session('LoanDetails.Loan_Reason')=='Investment' ? 'selected' : '' }} >Investment</option>
                                         </optgroup>
                                         <optgroup label="Transport">
-                                            <option value="New car">New car</option>
-                                            <option value="Used car">Used car</option>
-                                            <option value="Boats, caravans, trailers">Boats, caravans, trailers</option>
-                                            <option value="Motorbike/Scooter">Motorbike/Scooter</option>
+                                            <option value="New car" {{ session('LoanDetails.Loan_Reason')=='New car' ? 'selected' : '' }} >New car</option>
+                                            <option value="Used car" {{ session('LoanDetails.Loan_Reason')=='Used car' ? 'selected' : '' }} >Used car</option>
+                                            <option value="Boats, caravans, trailers" {{ session('LoanDetails.Loan_Reason')=='Boats, caravans, trailers' ? 'selected' : '' }} >Boats, caravans, trailers</option>
+                                            <option value="Motorbike/Scooter" {{ session('LoanDetails.Loan_Reason')=='Motorbike/Scooter' ? 'selected' : '' }} >Motorbike/Scooter</option>
                                         </optgroup>
                                         <optgroup label="Home improvement">
-                                            <option value="Home renovations">Home renovations</option>
-                                            <option value="Household goods">Household goods</option>
+                                            <option value="Home renovations" {{ session('LoanDetails.Loan_Reason')=='Home renovations' ? 'selected' : '' }} >Home renovations</option>
+                                            <option value="Household goods" {{ session('LoanDetails.Loan_Reason')=='Household goods' ? 'selected' : '' }} >Household goods</option>
                                         </optgroup>
                                         <optgroup label="Event">
-                                            <option value="Wedding">Wedding</option>
-                                            <option value="Other life event">Other life event</option>
+                                            <option value="Wedding" {{ session('LoanDetails.Loan_Reason')=='Wedding' ? 'selected' : '' }} >Wedding</option>
+                                            <option value="Other life event" {{ session('LoanDetails.Loan_Reason')=='Other life event' ? 'selected' : '' }} >Other life event</option>
                                         </optgroup>
                                         <optgroup label="Living">
-                                            <option value="Medical expenses">Medical expenses</option>
-                                            <option value="Travel">Travel</option>
-                                            <option value="Other">Other</option>
+                                            <option value="Medical expenses" {{ session('LoanDetails.Loan_Reason')=='Medical expenses' ? 'selected' : '' }} >Medical expenses</option>
+                                            <option value="Travel" {{ session('LoanDetails.Loan_Reason')=='Travel' ? 'selected' : '' }} >Travel</option>
+                                            <option value="Other" {{ session('LoanDetails.Loan_Reason')=='Other' ? 'selected' : '' }} >Other</option>
                                         </optgroup>
                                     </select>
                                 </div>
 
                                 <!-- loan amount -->
                                 <div class="form-group col-lg-4">
-                                    <label for="loan_amount">Loan amount</label>
+                                    <label for="Loan_Amount">Loan amount</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">$</span>
                                         </div>
-                                        <input type="text" class="form-control" id="loan_amount" name="loan_amount" onchange="calculate()">
+                                        <input type="text" class="form-control" id="Loan_Amount" name="Loan_Amount" value="{{ session('LoanDetails.Loan_Amount') }}" onchange="calculate()">
                                     </div>
                                 </div>
 
                                 <!-- loan duration -->
                                 <div class="form-group col-lg-4">
-                                    <label for="loan_duration">Loan duration</label>
+                                    <label for="Loan_Duration">Loan duration</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="loan_duration" name="loan_duration" onchange="calculate()">
+                                        <input type="text" class="form-control" id="Loan_Duration" name="Loan_Duration" value="{{ session('LoanDetails.Loan_Duration') }}" onchange="calculate()">
                                         <div class="input-group-append">
-                                            <select id="loan_periodicity" name="loan_periodicity" class="form-control btn btn-outline-secondary" onchange="calculate()">
-                                                <option value="months" >Months</option>
-                                                <option value="years" >Years</option>
+                                            <select id="Loan_Duration_Periodicity" name="Loan_Duration_Periodicity" class="form-control btn btn-outline-secondary" onchange="calculate()">
+                                                <option value="months" {{ session('LoanDetails.Loan_Duration_Periodicity')=='months' ? 'selected' : '' }} >Months</option>
+                                                <option value="years"  {{ session('LoanDetails.Loan_Duration_Periodicity')=='years' ? 'selected' : '' }} >Years</option>
                                             </select>
                                         </div>
                                     </div>
@@ -149,21 +149,21 @@
                                             <tbody >
                                             <tr>
                                                 <th scope="row" class="table-light">Excellent</th>
+                                                <td class="table-light" ><input class="border-0" type="text" id="Interest_Rate_Excellent" name="Interest_Rate_Excellent" value="9.0%"></td>
                                                 <td class="table-light">9.0%</td>
-                                                <td class="table-light">9.0%</td>
-                                                <td class="table-light" id="excellent_repaymentAmount"></td>
+                                                <td class="table-light" id=""><input class="border-0" readonly type="text" id="Estimated_Repayments_Excellent" name="Estimated_Repayments_Excellent" value="{{ session('LoanDetails.Estimated_Repayments_Excellent') }}"></td>
                                             </tr>
                                             <tr>
                                                 <th scope="row" class="table-light">Good</th>
+                                                <td class="table-light"><input class="border-0" readonly type="text" id="Interest_Rate_Good" name="Interest_Rate_Good" value="12.0%"></td>
                                                 <td class="table-light">12.0%</td>
-                                                <td class="table-light">12.0%</td>
-                                                <td class="table-light" id="good_repaymentAmount"></td>
+                                                <td class="table-light" id=""><input class="border-0" readonly type="text" id="Estimated_Repayments_Good" name="Estimated_Repayments_Good" value="{{ session('LoanDetails.Estimated_Repayments_Good') }}"></td>
                                             </tr>
                                             <tr >
                                                 <th scope="row" class="table-light">Ok</th>
+                                                <td class="table-light"><input class="border-0" readonly type="text" id="Interest_Rate_Ok" name="Interest_Rate_Ok" value="16.0%"></td>
                                                 <td class="table-light">16.0%</td>
-                                                <td class="table-light">16.0%</td>
-                                                <td class="table-light" id="ok_repaymentAmount" ></td>
+                                                <td class="table-light" ><input class="border-0" readonly type="text" id="Estimated_Repayments_Ok" name="Estimated_Repayments_Ok" value="{{ session('LoanDetails.Estimated_Repayments_Ok') }}"></td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -175,7 +175,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="inputGroup-sizing-default">Repayment frequency</span>
                                     </div>
-                                    <select class="form-control btn btn-md btn-outline-secondary" id="repayment_frequency" onchange="calculate()">
+                                    <select class="form-control btn btn-md btn-outline-secondary" id="Repayment_Frequency" onchange="calculate()">
                                         <option value="week">Weekly</option>
                                         <option value="fortnight">Fortnightly</option>
                                         <option value="month">Monthly</option>
@@ -215,8 +215,8 @@
         window.calculate = function () {
 
             // find out what the repayment frequency is as requested by user
-            loanDuration = document.getElementById("loan_duration");
-            duration_period = document.getElementById("loan_periodicity");
+            loanDuration = document.getElementById("Loan_Duration");
+            duration_period = document.getElementById("Loan_Duration_Periodicity");
 
             switch (duration_period.value) {
                 case "months":
@@ -231,7 +231,7 @@
             //alert(durationMths);
 
             // find out what the repayment frequency is as requested by user
-            repayment_frequence = document.getElementById("repayment_frequency");
+            repayment_frequence = document.getElementById("Repayment_Frequency");
 
             switch (repayment_frequence.value) {
                 case "week":
@@ -257,7 +257,7 @@
             // Excellent Rate
 
             // Look up the input and output elements in the document
-            var amount = document.getElementById("loan_amount");
+            var amount = document.getElementById("Loan_Amount");
             var apr = 9;
             //var durationMths = document.getElementById("loanDuration");
             var total = document.getElementById("total");
@@ -284,15 +284,15 @@
 
             if (isFinite(monthlyRepayment)) {
                 // Fill in the output fields, rounding to 2 decimal places
-                excellent_repaymentAmount.innerHTML = "$"+monthlyRepayment.toFixed(2) +" per " + repayment_frequence.value;
-                //totalRepayments.innerHTML = (monthlyRepayment * numPayments).toFixed(2);
-                //totalInterest.innerHTML = ((monthlyRepayment * numPayments) - principal).toFixed(2);
+                document.getElementById("Estimated_Repayments_Excellent").value = "$"+monthlyRepayment.toFixed(2) +" per " + repayment_frequence.value;
+                /*Estimated_Repayments_Excellent.innerHTML = "$"+monthlyRepayment.toFixed(2) +" per " + repayment_frequence.value;*/
+
 
 
             } else {
                 // Reslt was Not-a-Number or infinite, which means the input was
                 // incomplete or invalid.  Clear any previously displayed output.
-                excellent_repaymentAmount.innterHTML = ""; // Erase the content of these elemts
+                Estimated_Repayments_Excellent.innterHTML = ""; // Erase the content of these elemts
                 //totalRepayments.innerHTML = "";
                 //totalInterest.innerHTML = "";
 
@@ -306,7 +306,7 @@
             // Excellent Rate
 
             // Look up the input and output elements in the document
-            var amount = document.getElementById("loan_amount");
+            var amount = document.getElementById("Loan_Amount");
             var apr = 12;
             //var durationMths = document.getElementById("loanDuration");
             var total = document.getElementById("total");
@@ -334,15 +334,14 @@
 
             if (isFinite(monthlyRepayment)) {
                 // Fill in the output fields, rounding to 2 decimal places
-                good_repaymentAmount.innerHTML = "$"+monthlyRepayment.toFixed(2) +" per " + repayment_frequence.value;;
-                //totalRepayments.innerHTML = (monthlyRepayment * numPayments).toFixed(2);
-                //totalInterest.innerHTML = ((monthlyRepayment * numPayments) - principal).toFixed(2);
+                document.getElementById("Estimated_Repayments_Good").value = "$"+monthlyRepayment.toFixed(2) +" per " + repayment_frequence.value;
+                /*Estimated_Repayments_Good.innerHTML = "$"+monthlyRepayment.toFixed(2) +" per " + repayment_frequence.value;*/
 
 
             } else {
                 // Reslt was Not-a-Number or infinite, which means the input was
                 // incomplete or invalid.  Clear any peviously displayed output.
-                good_repaymentAmount.innterHTML = ""; // Erase the content of these elemts
+                Estimated_Repayments_Good.innterHTML = ""; // Erase the content of these elemts
                 //totalRepayments.innerHTML = "";
                 //totalInterest.innerHTML = "";
 
@@ -355,11 +354,9 @@
             // Excellent Rate
 
             // Look up the input and output elements in the document
-            var amount = document.getElementById("loan_amount");
+            var amount = document.getElementById("Loan_Amount");
             var apr = 16;
-            //var durationMths = document.getElementById("loanDuration");
-            var total = document.getElementById("total");
-            var totalinterest = document.getElementById("totalinterest");
+
 
 
             // Get the user's input from the input elements.
@@ -383,17 +380,16 @@
 
             if (isFinite(monthlyRepayment)) {
                 // Fill in the output fields, rounding to 2 decimal places
-                ok_repaymentAmount.innerHTML = "$"+monthlyRepayment.toFixed(2) +" per " + repayment_frequence.value;;
-                //totalRepayments.innerHTML = (monthlyRepayment * numPayments).toFixed(2);
-                //totalInterest.innerHTML = ((monthlyRepayment * numPayments) - principal).toFixed(2);
+                document.getElementById("Estimated_Repayments_Ok").value = "$"+monthlyRepayment.toFixed(2) +" per " + repayment_frequence.value;
+
+                /*Estimated_Repayments_Ok.innerHTML = "$"+monthlyRepayment.toFixed(2) +" per " + repayment_frequence.value;*/
 
 
             } else {
                 // Reslt was Not-a-Number or infinite, which means the input was
                 // incomplete or invalid.  Clear any peviously displayed output.
-                ok_repaymentAmount.innterHTML = ""; // Erase the content of these elemts
-                //totalRepayments.innerHTML = "";
-                //totalInterest.innerHTML = "";
+                Estimated_Repayments_Ok.innterHTML = ""; // Erase the content of these elemts
+
 
             }
         }
@@ -410,11 +406,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <strong>Explanation text</strong>
-                    <br>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid amet at autem,
-                    consequatur error nulla omnis quae quas quibusdam ullam veniam. Autem distinctio ipsum maiores nobis
-                    repellat veritatis vero.
+
+                    Credit Profile is an assessment of the assumed credit worthiness of the borrower. The assessment takes into various factors like the loan amount, loan duration, your credit history and other financial and employment information.
 
 
                 </div>
@@ -433,11 +426,27 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <strong>Explanation text</strong>
-                    <br>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid amet at autem,
-                    consequatur error nulla omnis quae quas quibusdam ullam veniam. Autem distinctio ipsum maiores nobis
-                    repellat veritatis vero.
+
+                    <h5>A comparison rate indicates the true cost of a loan</h5>
+                    <p>A comparison rate is designed to help you understand the overall cost of a loan based on several relevant factors, rather than just the interest rate. Each comparison rate accounts for the: </p>
+
+                    <ul>
+                        <li>amount of the loan</li>
+                        <li>term</li>
+                        <li>repayment frequency</li>
+                        <li>interest rate</li>
+                        <li>fees and charges</li>
+                    </ul>
+
+                    <h5>Why pay attention to comparison rates?</h5>
+                    <p>The loan with the lowest interest rate isn’t always the cheapest option. When researching products offered by different providers, you can use the respective comparison rates as a more accurate indication of loan cost than you would otherwise get by only comparing interest rates. This can help you decide which option might suit your needs. </p>
+
+                    <p>For instance, a loan with a low interest rate but high fees and charges may have a higher comparison rate than a loan with a higher interest rate but low fees and charges. Note that comparison rates only apply to loans with a fixed term, not lines of credit such as flexi loans, as there are too many variables.</p>
+
+                    <h5>Things to keep in mind</h5>
+                    <p>Remember that when you look at comparison rates, the loan amounts and terms don’t cover all possible situations – so they may not be an accurate reflection of your particular loan. The amounts that a comparison rate is based on will be in the fine print.</p>
+
+                    <p>While comparison rates can be a good starting point, they’re not the only thing to consider when shopping around for a personal loan. It’s also important to compare the other features of the loan to see if it works for you.</p>
 
 
                 </div>

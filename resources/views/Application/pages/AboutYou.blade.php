@@ -42,7 +42,7 @@
 
                 <div class="card-body" style="border-radius: 0px 0px 5px 5px;;background-color:#efebe4" >
 
-                    <form class="needs-validation" method="post" action="/xxx" novalidate>
+                    <form class="needs-validation" method="post" action="/Step2" novalidate>
 
                         @csrf
 
@@ -55,33 +55,33 @@
                             <div class="form-row">
                                 <!-- title -->
                                 <div class="form-group col-lg-2">
-                                    <label for="titleName">Title</label>
-                                    <select class="form-control" id="titleName" name="titleName" required>
+                                    <label for="Name_Title">Title</label>
+                                    <select class="form-control" id="Name_Title" name="Name_Title" required>
                                         <option value="" >Please Select</option>
-                                        <option value="Mr">Mr</option>
-                                        <option value="Mrs">Mrs</option>
-                                        <option value="Miss">Miss</option>
-                                        <option value="Ms">Ms</option>
-                                        <option value="Dr">Dr</option>
+                                        <option value="Mr" {{ session('PersonalDetails.Name_Title')=='Mr' ? 'selected' : '' }}>Mr</option>
+                                        <option value="Mrs" {{ session('PersonalDetails.Name_Title')=='Mrs' ? 'selected' : '' }}>Mrs</option>
+                                        <option value="Miss" {{ session('PersonalDetails.Name_Title')=='Miss' ? 'selected' : '' }}>Miss</option>
+                                        <option value="Ms" {{ session('PersonalDetails.Name_Title')=='Ms' ? 'selected' : '' }}>Ms</option>
+                                        <option value="Dr" {{ session('PersonalDetails.Name_Title')=='Dr' ? 'selected' : '' }}>Dr</option>
                                     </select>
                                 </div>
 
                                 <!-- first name -->
                                 <div class="form-group col-lg-3">
-                                    <label for="firstName">First name</label>
-                                    <input type="text" class="form-control" id="firstName">
+                                    <label for="First_Name">First name</label>
+                                    <input type="text" class="form-control" id="First_Name" name="First_Name" value="{{ session('PersonalDetails.First_Name') }}">
                                 </div>
 
                                 <!-- middle name -->
                                 <div class="form-group col-lg-3">
-                                    <label for="middleName">Middle name (if any)</label>
-                                    <input type="text" class="form-control" id="middleName">
+                                    <label for="Middle_Name">Middle name (if any)</label>
+                                    <input type="text" class="form-control" id="Middle_Name" name="Middle_Name" value="{{ session('PersonalDetails.Middle_Name') }}">
                                 </div>
 
                                 <!-- last name -->
                                 <div class="form-group col-lg-4">
-                                    <label for="lastName">Last name</label>
-                                    <input type="text" class="form-control" id="lastName">
+                                    <label for="Last_Name">Last name</label>
+                                    <input type="text" class="form-control" id="Last_Name" name="Last_Name" value="{{ session('PersonalDetails.Last_Name') }}">
                                 </div>
                             </div>
 
@@ -91,34 +91,35 @@
                                 <!-- DOB -->
                                 <div class="form-group col-lg-3">
                                     <label for="DOB">Date of birth</label>
-                                    <input type="text" class="form-control" id="DOB" placeholder="DD/MM/YYYY">
+                                    <input type="text" class="form-control" id="DOB" name="DOB" placeholder="DD/MM/YYYY" value="{{ session('PersonalDetails.DOB') }}">
                                 </div>
 
                                 <!-- drivers licence number -->
                                 <div class="form-group col-lg-3">
-                                    <label for="driversLicenceNumber">Drivers licence number</label>
-                                    <input type="text" class="form-control" id="driversLicenceNumber" >
+                                    <label for="Drivers_Licence_Number">Drivers licence number</label>
+                                    <input type="text" class="form-control" id="Drivers_Licence_Number" name="Drivers_Licence_Number" value="{{ session('PersonalDetails.Drivers_Licence_Number') }}">
                                 </div>
 
                                 <!-- licence state of issue -->
                                 <div class="form-group col-lg-2">
-                                    <label for="licenceStateIssue">State of issue</label>
-                                    <select class="form-control" id="licenceStateIssue" name="licenceStateIssue" required>
+                                    <label for="Drivers_Licence_State_Issue">State of issue</label>
+                                    <select class="form-control" id="Drivers_Licence_State_Issue" name="Drivers_Licence_State_Issue" value="{{ session('PersonalDetails.Drivers_Licence_State_Issue') }}">
                                         <option value="" >Please Select</option>
-                                        <option value="NSW">NSW</option>
-                                        <option value="QLD">QLD</option>
-                                        <option value="VIC">VIC</option>
-                                        <option value="SA">SA</option>
-                                        <option value="WA">WA</option>
-                                        <option value="WA">NT</option>
-                                        <option value="WA">ACT</option>
+                                        <option value="NSW" {{ session('PersonalDetails.Drivers_Licence_State_Issue')=='NSW' ? 'selected' : '' }}>NSW</option>
+                                        <option value="QLD" {{ session('PersonalDetails.Drivers_Licence_State_Issue')=='QLD' ? 'selected' : '' }}>QLD</option>
+                                        <option value="VIC" {{ session('PersonalDetails.Drivers_Licence_State_Issue')=='VIC' ? 'selected' : '' }}>VIC</option>
+                                        <option value="SA" {{ session('PersonalDetails.Drivers_Licence_State_Issue')=='SA' ? 'selected' : '' }}>SA</option>
+                                        <option value="WA" {{ session('PersonalDetails.Drivers_Licence_State_Issue')=='WA' ? 'selected' : '' }}>WA</option>
+                                        <option value="NT" {{ session('PersonalDetails.Drivers_Licence_State_Issue')=='NT' ? 'selected' : '' }}>NT</option>
+                                        <option value="ACT" {{ session('PersonalDetails.Drivers_Licence_State_Issue')=='ACT' ? 'selected' : '' }}>ACT</option>
+                                        <option value="TAS" {{ session('PersonalDetails.Drivers_Licence_State_Issue')=='TAS' ? 'selected' : '' }}>TAS</option>
                                     </select>
                                 </div>
 
                                 <!-- preferred contact number -->
                                 <div class="form-group col-lg-3">
-                                    <label for="preferredContactNumber">Preferred contact number</label>
-                                    <input type="text" class="form-control" id="preferredContactNumber" >
+                                    <label for="Preferred_Contact_Number">Preferred contact number</label>
+                                    <input type="text" class="form-control" id="Preferred_Contact_Number" name="Preferred_Contact_Number" value="{{ session('PersonalDetails.Preferred_Contact_Number') }}">
                                 </div>
                             </div>
 
@@ -131,41 +132,41 @@
 
                                 <!-- residential status -->
                                 <div class="form-group col-lg-4">
-                                    <label for="residentialStatus">Residential status</label>
-                                    <select class="form-control" id="residentialStatus" name="residentialStatus" required>
+                                    <label for="Residential_Status">Residential status</label>
+                                    <select class="form-control" id="Residential_Status" name="Residential_Status" required>
                                         <option value="" >Please Select</option>
-                                        <option value="Renting">Renting</option>
-                                        <option value="Home owner - no mortgage">Home owner - no mortgage</option>
-                                        <option value="Home owner - with mortgage">Home owner - with mortgage</option>
-                                        <option value="Boarding/living with parents">Boarding/living with parents</option>
-                                        <option value="Other">Other</option>
+                                        <option value="Renting" {{ session('PersonalDetails.Residential_Status')=='Renting' ? 'selected' : '' }}>Renting</option>
+                                        <option value="Home owner - no mortgage" {{ session('PersonalDetails.Residential_Status')=='Home owner - no mortgage' ? 'selected' : '' }}>Home owner - no mortgage</option>
+                                        <option value="Home owner - with mortgage" {{ session('PersonalDetails.Residential_Status')=='Home owner - with mortgage' ? 'selected' : '' }}>Home owner - with mortgage</option>
+                                        <option value="Boarding/living with parents" {{ session('PersonalDetails.Residential_Status')=='Boarding/living with parents' ? 'selected' : '' }}>Boarding/living with parents</option>
+                                        <option value="Other" {{ session('PersonalDetails.Residential_Status')=='Other' ? 'selected' : '' }}>Other</option>
                                     </select>
                                 </div>
 
                                 <!-- martial status -->
                                 <div class="form-group col-lg-4">
-                                    <label for="martialStatus">Martial status</label>
-                                    <select class="form-control" id="martialStatus" name="martialStatus" required>
+                                    <label for="Martial_Status">Martial status</label>
+                                    <select class="form-control" id="Martial_Status" name="Martial_Status" required>
                                         <option value="" >Please Select</option>
-                                        <option value="Single">Single</option>
-                                        <option value="Married">Married</option>
-                                        <option value="De facto">De facto</option>
-                                        <option value="Widowed">Widowed</option>
-                                        <option value="Divorced">Divorced</option>
+                                        <option value="Single" {{ session('PersonalDetails.Martial_Status')=='Single' ? 'selected' : '' }}>Single</option>
+                                        <option value="Married" {{ session('PersonalDetails.Martial_Status')=='Married' ? 'selected' : '' }}>Married</option>
+                                        <option value="De facto" {{ session('PersonalDetails.Martial_Status')=='De facto' ? 'selected' : '' }}>De facto</option>
+                                        <option value="Widowed" {{ session('PersonalDetails.Martial_Status')=='Widowed' ? 'selected' : '' }}>Widowed</option>
+                                        <option value="Divorced" {{ session('PersonalDetails.Martial_Status')=='Divorced' ? 'selected' : '' }}>Divorced</option>
                                     </select>
                                 </div>
 
                                 <!-- number of dependents -->
                                 <div class="form-group col-lg-4">
-                                    <label for="numberDependents">How many dependents do you have</label>
-                                    <select class="form-control" id="numberDependents" name="numberDependents" required>
+                                    <label for="Number_Of_Dependents">How many dependents do you have</label>
+                                    <select class="form-control" id="Number_Of_Dependents" name="Number_Of_Dependents" required>
                                         <option value="" >Please Select</option>
-                                        <option value="0">0</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5+</option>
+                                        <option value="0" {{ session('PersonalDetails.Number_Of_Dependents')=='0' ? 'selected' : '' }}>0</option>
+                                        <option value="1" {{ session('PersonalDetails.Number_Of_Dependents')=='1' ? 'selected' : '' }}>1</option>
+                                        <option value="2" {{ session('PersonalDetails.Number_Of_Dependents')=='2' ? 'selected' : '' }}>2</option>
+                                        <option value="3" {{ session('PersonalDetails.Number_Of_Dependents')=='3' ? 'selected' : '' }}>3</option>
+                                        <option value="4" {{ session('PersonalDetails.Number_Of_Dependents')=='4' ? 'selected' : '' }}>4</option>
+                                        <option value="5" {{ session('PersonalDetails.Number_Of_Dependents')=='5' ? 'selected' : '' }}>5+</option>
                                     </select>
                                 </div>
 
@@ -182,22 +183,22 @@
                             </div>
 
                             <div class="form-group row col-lg-8">
-                                <label for="inputAddress">Address</label>
-                                <input type="text" class="form-control" id="inputAddress" placeholder="e.g. Unit 3, 1234 Main St, Sydney, NSW, 2000">
+                                <label for="Residential_Address">Address</label>
+                                <input type="text" class="form-control" id="Residential_Address" name="Residential_Address" placeholder="e.g. Unit 3, 1234 Main St, Sydney, NSW, 2000" value="{{ session('PersonalDetails.Residential_Address') }}">
                                 <small class="form-text text-muted mb-1" >This is your postal address as well and cannot be a PO Box</small>
                             </div>
 
 
                             <!-- time at address -->
                             <div class="form-group row col-lg-4">
-                                <label for="timeAddress" style="white-space: nowrap">How long have you lived at the above address</label>
-                                <select class="form-control" id="currentAddressTime" name="currentAddressTime" required>
+                                <label for="Time_At_Current_Address" style="white-space: nowrap">How long have you lived at the above address</label>
+                                <select class="form-control" id="Time_At_Current_Address" name="Time_At_Current_Address" required>
                                     <option value="" >Please Select</option>
-                                    <option value="6">0 to 6 months</option>
-                                    <option value="12">6 to 12 months</option>
-                                    <option value="24">1 to 2 years</option>
-                                    <option value="36">2 to 3 years</option>
-                                    <option value="48">Greater than 3 years</option>
+                                    <option value="0 to 6 months" {{ session('PersonalDetails.Time_At_Current_Address')=='0 to 6 months' ? 'selected' : '' }}>0 to 6 months</option>
+                                    <option value="6 to 12 months" {{ session('PersonalDetails.Time_At_Current_Address')=='6 to 12 months' ? 'selected' : '' }}>6 to 12 months</option>
+                                    <option value="1 to 2 years" {{ session('PersonalDetails.Time_At_Current_Address')=='1 to 2 years' ? 'selected' : '' }}>1 to 2 years</option>
+                                    <option value="2 to 3 years" {{ session('PersonalDetails.Time_At_Current_Address')=='2 to 3 years' ? 'selected' : '' }}>2 to 3 years</option>
+                                    <option value="Greater than 3 years" {{ session('PersonalDetails.Time_At_Current_Address')=='Greater than 3 years' ? 'selected' : '' }}>Greater than 3 years</option>
                                 </select>
                             </div>
 
@@ -213,57 +214,43 @@
 
                             <div class="form-row">
                                 <!-- Employment type -->
-                                <div class="form-group col-lg-4">
-                                    <label for="employmentType">Employment type</label>
-                                    <select class="form-control" id="employmentType" name="employmentType" required>
+                                <div class="form-group col-lg-2">
+                                    <label for="Current_Employment_Type">Employment type</label>
+                                    <select class="form-control" id="Current_Employment_Type" name="Current_Employment_Type" required>
                                         <option value="" >Please Select</option>
-                                        <option value="Full time">Full time</option>
-                                        <option value="Part time">Part time</option>
-                                        <option value="Casual/seasonal">Casual/seasonal</option>
-                                        <option value="Self employed">Self employed</option>
-                                        <option value="Not employed">Not employed</option>
+                                        <option value="Full time" {{ session('PersonalDetails.Current_Employment_Type')=='Full time' ? 'selected' : '' }}>Full time</option>
+                                        <option value="Part time" {{ session('PersonalDetails.Current_Employment_Type')=='Part time' ? 'selected' : '' }}>Part time</option>
+                                        <option value="Casual/seasonal" {{ session('PersonalDetails.Current_Employment_Type')=='Casual/seasonal' ? 'selected' : '' }}>Casual/seasonal</option>
+                                        <option value="Self employed" {{ session('PersonalDetails.Current_Employment_Type')=='Self employed' ? 'selected' : '' }}>Self employed</option>
+                                        <option value="Not employed" {{ session('PersonalDetails.Current_Employment_Type')=='Not employed' ? 'selected' : '' }}>Not employed</option>
                                     </select>
-                                </div>
-
-                                <!-- Occupation type -->
-                                <div class="form-group col-lg-4">
-                                    <label for="occupationType">Occupation type</label>
-                                    <select class="form-control" id="occupationType" name="occupationType" required>
-                                        <option value="" >Please Select</option>
-                                        <option value="xx">xx</option>
-                                        <option value="xx">xx</option>
-                                        <option value="xx">xx</option>
-                                        <option value="xx">xx</option>
-                                    </select>
-                                </div>
-                            </div>
-
-
-                            <div class="form-row">
-
-                                <!-- employers name -->
-                                <div class="form-group col-lg-4">
-                                    <label for="employerName">Employer's name</label>
-                                    <input type="text" class="form-control" id="employerName">
-                                </div>
-
-                                <!-- employers phone number -->
-                                <div class="form-group col-lg-4">
-                                    <label for="employerPhone">Employer's phone number</label>
-                                    <input type="text" class="form-control" id="employerPhone">
                                 </div>
 
                                 <!-- Employment period -->
-                                <div class="form-group col-lg-4">
-                                    <label for="currentEmployerTime">Employment period</label>
-                                    <select class="form-control" id="currentEmployerTime" name="currentEmployerTime" required>
+                                <div class="form-group col-lg-3">
+                                    <label for="Current_Employment_Length">Employment period</label>
+                                    <select class="form-control" id="Current_Employment_Length" name="Current_Employment_Length" required>
                                         <option value="" >Please Select</option>
-                                        <option value="1">Less than one year</option>
-                                        <option value="2">1 to 2 years</option>
-                                        <option value="3">2 to 3 years</option>
-                                        <option value="4">Greater than 3 years</option>
+                                        <option value="Less than one year" {{ session('PersonalDetails.Current_Employment_Length')=='Less than one year' ? 'selected' : '' }}>Less than one year</option>
+                                        <option value="1 to 2 years" {{ session('PersonalDetails.Current_Employment_Length')=='1 to 2 years' ? 'selected' : '' }}>1 to 2 years</option>
+                                        <option value="2 to 3 years" {{ session('PersonalDetails.Current_Employment_Length')=='2 to 3 years' ? 'selected' : '' }}>2 to 3 years</option>
+                                        <option value="Greater than 3 years" {{ session('PersonalDetails.Current_Employment_Length')=='Greater than 3 years' ? 'selected' : '' }}>Greater than 3 years</option>
                                     </select>
                                 </div>
+
+
+                                <!-- employers name -->
+                                <div class="form-group col-lg-4">
+                                    <label for="Current_Employers_Name">Employer's name</label>
+                                    <input type="text" class="form-control" id="Current_Employers_Name" name="Current_Employers_Name" value="{{ session('PersonalDetails.Current_Employers_Name') }}">
+                                </div>
+
+                                <!-- employers phone number -->
+                                <div class="form-group col-lg-3">
+                                    <label for="Current_Employers_Phone">Employer's phone number</label>
+                                    <input type="text" class="form-control" id="Current_Employers_Phone" name="Current_Employers_Phone" value="{{ session('PersonalDetails.Current_Employers_Phone') }}">
+                                </div>
+
                             </div>
 
                             <div id="previousEmployerPlaceholder">
@@ -288,10 +275,11 @@
                         </div>--}}
                             <div class="row justify-content-between text-center align-items-center">
                                 <div class="col-md-4 col-sm-12 ">
-                                    <a class="btn btn-outline-info btn-sm " href="/loanDetails" role="button">Previous Page</a>
+                                    <a class="btn btn-outline-info btn-sm " href="/Step1" role="button">Previous Page</a>
                                 </div>
                                 <div class="col-md-4 col-sm-12 mt-sm-3 mt-xs-3">
-                                    <a class="btn btn-success btn-lg" href="/financialDetails" role="button">Continue</a>
+                                    {{--<a class="btn btn-success btn-lg" href="/financialDetails" role="button">Continue</a>--}}
+                                    <button type="submit" class="btn btn-success btn-lg">Continue</button>
                                 </div>
                             </div>
 
@@ -305,13 +293,13 @@
     <script>
         /*Previous Address*/
         $(function () {
-            $('#currentAddressTime').change(function(){
+            $('#Time_At_Current_Address').change(function(){
 
-                var y = document.querySelector('#currentAddressTime').value;
+                var y = document.querySelector('#Time_At_Current_Address').value;
 
-                if (y >24) {
+                if (y =='2 to 3 years' || y=='Greater than 3 years') {
                     $("#previousAddressInputs").detach();
-                } else if (y <=24) {
+                } else {
                     $('#previousAddressPlaceholder').load("/aboutYou_partials #previousAddressInputs");
                 }
 
@@ -320,13 +308,13 @@
 
         /*Previous Employer*/
         $(function () {
-            $('#currentEmployerTime').change(function(){
+            $('#Current_Employment_Length').change(function(){
 
-                var y = document.querySelector('#currentEmployerTime').value;
+                var y = document.querySelector('#Current_Employment_Length').value;
 
-                if (y >2) {
+                if (y =='2 to 3 years' || y=='Greater than 3 years' ) {
                     $("#previousEmployerInputs").detach();
-                } else if (y <=2) {
+                } else  {
                     $('#previousEmployerPlaceholder').load("/aboutYou_partials #previousEmployerInputs");
                 }
 
