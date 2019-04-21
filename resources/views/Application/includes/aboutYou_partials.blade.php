@@ -15,7 +15,7 @@
         <!-- address -->
         <div class="form-group row col-8">
             <label for="Previous_Residential_Address">Address</label>
-            <input type="text" class="form-control" id="Previous_Residential_Address" name="Previous_Residential_Address" placeholder="e.g. Unit 3, 1234 Main St, Sydney, NSW, 2000" value="{{ session('PersonalDetails.Previous_Residential_Address') }}">
+            <input type="text" class="form-control" id="Previous_Residential_Address" name="Previous_Residential_Address" placeholder="e.g. Unit 3, 1234 Main St, Sydney, NSW, 2000" value="{{ session('PersonalDetails.Previous_Residential_Address') }}" required>
         </div>
 
         <!-- time at address -->
@@ -60,14 +60,14 @@
         <!-- previous employers name -->
         <div class="form-group col-lg-5">
             <label for="Previous_Employers_Name">Previous employer's name</label>
-            <input type="text" class="form-control" id="Previous_Employers_Name" name="Previous_Employers_Name" value="{{ session('PersonalDetails.Previous_Employers_Name') }}">
+            <input type="text" class="form-control" id="Previous_Employers_Name" name="Previous_Employers_Name" value="{{ session('PersonalDetails.Previous_Employers_Name') }}" required>
         </div>
 
 
         <!-- Previous employment period -->
         <div class="form-group col-lg-4">
             <label for="Previous_Employment_Length">Previous employment period</label>
-            <select class="form-control" id="Previous_Employment_Length" name="Previous_Employment_Length" >
+            <select class="form-control" id="Previous_Employment_Length" name="Previous_Employment_Length" required>
                 <option value="" >Please Select</option>
                 <option value="Less than one year" {{ session('PersonalDetails.Previous_Employment_Length')=='Less than one year' ? 'selected' : '' }}>Less than one year</option>
                 <option value="1 to 2 years" {{ session('PersonalDetails.Previous_Employment_Length')=='1 to 2 years' ? 'selected' : '' }}>1 to 2 years</option>

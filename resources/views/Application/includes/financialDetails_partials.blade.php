@@ -12,7 +12,7 @@
         <div class="input-group-prepend">
             <span class="input-group-text">$</span>
         </div>
-        <input type="text" class="form-control" id="Government_Benefits_Income" name="Government_Benefits_Income" value="{{ session('FinancialDetails.Government_Benefits_Income') }}">
+        <input type="number" class="form-control" id="Government_Benefits_Income" name="Government_Benefits_Income" value="{{ session('FinancialDetails.Government_Benefits_Income') }}" required>
         <div class="input-group-append">
             <select id="Government_Benefits_Income_Frequency" name="Government_Benefits_Income_Frequency" class="form-control btn btn-outline-secondary">
                 <option value="week" {{ session('FinancialDetails.Government_Benefits_Income_Frequency')=='week' ? 'selected' : '' }}>Week</option>
@@ -31,7 +31,7 @@
         <div class="input-group-prepend">
             <span class="input-group-text">$</span>
         </div>
-        <input type="text" class="form-control" id="Rental_Income" name="Rental_Income" value="{{ session('FinancialDetails.Rental_Income') }}">
+        <input type="number" class="form-control" id="Rental_Income" name="Rental_Income" value="{{ session('FinancialDetails.Rental_Income') }}" required>
         <div class="input-group-append">
             <select id="Rental_Income_Frequency" name="Rental_Income_Frequency" class="form-control btn btn-outline-secondary">
                 <option value="week" {{ session('FinancialDetails.Rental_Income_Frequency')=='week' ? 'selected' : '' }}>Week</option>
@@ -50,7 +50,7 @@
         <div class="input-group-prepend">
             <span class="input-group-text">$</span>
         </div>
-        <input type="text" class="form-control" id="Other_Income" name="Other_Income" value="{{ session('FinancialDetails.Other_Income') }}">
+        <input type="number" class="form-control" id="Other_Income" name="Other_Income" value="{{ session('FinancialDetails.Other_Income') }}" required>
         <div class="input-group-append">
             <select id="Other_Income_Frequency" name="Other_Income_Frequency" class="form-control btn btn-outline-secondary">
                 <option value="week" {{ session('FinancialDetails.Other_Income_Frequency')=='week' ? 'selected' : '' }}>Week</option>
@@ -80,7 +80,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                 </div>
-                <input type="text" class="form-control" id="Home_Loan_Repayments" name="Home_Loan_Repayments" value="{{ session('FinancialDetails.Home_Loan_Repayments') }}">
+                <input type="number" class="form-control" id="Home_Loan_Repayments" name="Home_Loan_Repayments" value="{{ session('FinancialDetails.Home_Loan_Repayments') }}" required>
                 <div class="input-group-append">
                     <select id="Home_Loan_Repayments_Frequency" name="Home_Loan_Repayments_Frequency" class="form-control btn btn-outline-secondary">
                         <option value="week" {{ session('FinancialDetails.Home_Loan_Repayments_Frequency')=='week' ? 'selected' : '' }}>Week</option>
@@ -99,7 +99,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                 </div>
-                <input type="text" class="form-control" id="Home_Loan_Balance" name="Home_Loan_Balance" value="{{ session('FinancialDetails.Home_Loan_Balance') }}">
+                <input type="number" class="form-control" id="Home_Loan_Balance" name="Home_Loan_Balance" value="{{ session('FinancialDetails.Home_Loan_Balance') }}" required>
             </div>
         </div>
     </div>
@@ -117,7 +117,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                 </div>
-                <input type="text" class="form-control" id="Personal_Loan_Repayments" name="Personal_Loan_Repayments" value="{{ session('FinancialDetails.Personal_Loan_Repayments') }}">
+                <input type="number" class="form-control" id="Personal_Loan_Repayments" name="Personal_Loan_Repayments" value="{{ session('FinancialDetails.Personal_Loan_Repayments') }}" required>
                 <div class="input-group-append">
                     <select id="Personal_Loan_Repayments_Frequency" name="Personal_Loan_Repayments_Frequency" class="form-control btn btn-outline-secondary">
                         <option value="week" {{ session('FinancialDetails.Personal_Loan_Repayments_Frequency')=='week' ? 'selected' : '' }}>Week</option>
@@ -136,7 +136,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                 </div>
-                <input type="text" class="form-control" id="Personal_Loan_Balance" name="Personal_Loan_Balance" value="{{ session('FinancialDetails.Personal_Loan_Balance') }}">
+                <input type="number" class="form-control" id="Personal_Loan_Balance" name="Personal_Loan_Balance" value="{{ session('FinancialDetails.Personal_Loan_Balance') }}" required>
             </div>
         </div>
     </div>
@@ -154,7 +154,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                 </div>
-                <input type="text" class="form-control" id="Credit_Cards_Owing" name="Credit_Cards_Owing" value="{{ session('FinancialDetails.Credit_Cards_Owing') }}">
+                <input type="number" class="form-control" id="Credit_Cards_Owing" name="Credit_Cards_Owing" value="{{ session('FinancialDetails.Credit_Cards_Owing') }}" required>
             </div>
         </div>
 
@@ -165,7 +165,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                 </div>
-                <input type="text" class="form-control" id="Credit_Cards_Limit" name="Credit_Cards_Limit" value="{{ session('FinancialDetails.Credit_Cards_Limit') }}">
+                <input type="number" class="form-control" id="Credit_Cards_Limit" name="Credit_Cards_Limit" value="{{ session('FinancialDetails.Credit_Cards_Limit') }}" required>
             </div>
         </div>
     </div>

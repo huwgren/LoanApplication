@@ -20,6 +20,15 @@ class LoanApplicationController extends Controller
      */
     public function LoanDetails_View(Request $request)
     {
+        /*dd(Session::get('FinancialDetails'));*/
+
+        //clear all session data
+        Session::flush();
+
+        Session::regenerate();
+
+        /*dd(Session::get('LoanDetails'));*/
+
         //Retrieve loan details from session
         $loan_details = $request->session()->get('LoanDetails');
 
@@ -199,9 +208,9 @@ class LoanApplicationController extends Controller
         Session::put('ReferenceID', $date);
 
         //set a variable to be equal a entry from the session array
-        $email=Session::get('LoanDetails.email_address');
+        $email=Session::get('LoanDetails.Email_Address');
 
-        return view('Application.emails.test');
+        /*return view('Application.emails.test');*/
 
         //Mail the applicant's details
         Mail::to($email)

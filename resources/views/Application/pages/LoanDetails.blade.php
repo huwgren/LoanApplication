@@ -42,7 +42,7 @@
 
                 <div class="card-body" style="border-radius: 0px 0px 5px 5px;;background-color:#efebe4" >
 
-                    <form class="needs-validation" method="post" action="/Step1" novalidate>
+                    <form class=" needs-validation" method="post" action="/Step1" novalidate>
 
                         @csrf
 
@@ -54,8 +54,7 @@
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <label for="Email_Address">Email</label>
-                                    <input type="email" class="form-control" id="Email_Address" name="Email_Address" placeholder="Email" value="{{ session('LoanDetails.Email_Address') }}">
-                                    {{--<small id="emailHelp" class="form-text text-muted" style="white-space: nowrap">We will use this email address to let you know the outcome of your application and the next steps.</small>--}}
+                                    <input type="email" class="form-control" id="Email_Address" name="Email_Address" placeholder="Email" value="{{--{{ session('LoanDetails.Email_Address') }}--}}" required>
                                 </div>
                             </div>
 
@@ -108,7 +107,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">$</span>
                                         </div>
-                                        <input type="text" class="form-control" id="Loan_Amount" name="Loan_Amount" value="{{ session('LoanDetails.Loan_Amount') }}" onchange="calculate()">
+                                        <input type="text" class="form-control" id="Loan_Amount" name="Loan_Amount" value="{{ session('LoanDetails.Loan_Amount') }}" onchange="calculate()" required>
                                     </div>
                                 </div>
 
@@ -116,9 +115,9 @@
                                 <div class="form-group col-lg-4">
                                     <label for="Loan_Duration">Loan duration</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="Loan_Duration" name="Loan_Duration" value="{{ session('LoanDetails.Loan_Duration') }}" onchange="calculate()">
+                                        <input type="text" class="form-control" id="Loan_Duration" name="Loan_Duration" value="{{ session('LoanDetails.Loan_Duration') }}" onchange="calculate()" required>
                                         <div class="input-group-append">
-                                            <select id="Loan_Duration_Periodicity" name="Loan_Duration_Periodicity" class="form-control btn btn-outline-secondary" onchange="calculate()">
+                                            <select id="Loan_Duration_Periodicity" name="Loan_Duration_Periodicity" class="form-control btn btn-outline-secondary" onchange="calculate()" >
                                                 <option value="months" {{ session('LoanDetails.Loan_Duration_Periodicity')=='months' ? 'selected' : '' }} >Months</option>
                                                 <option value="years"  {{ session('LoanDetails.Loan_Duration_Periodicity')=='years' ? 'selected' : '' }} >Years</option>
                                             </select>

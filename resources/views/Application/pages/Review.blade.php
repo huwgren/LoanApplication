@@ -401,15 +401,15 @@
 
 
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" name="Financial_Position" id="Financial_Position" value="Checked">
+                        <input type="checkbox" class="custom-control-input" name="Financial_Position" id="Financial_Position" value="Checked" required>
                         <label class="custom-control-label" for="Financial_Position" >I have considered my future circumstances and financial position and are able to repay the loan</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" name="True_Information" id="True_Information" value="Checked">
+                        <input type="checkbox" class="custom-control-input" name="True_Information" id="True_Information" value="Checked" required>
                         <label class="custom-control-label" for="True_Information">I agree that the information I have given is true and correct</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" name="Electronic_Authorisation" id="Electronic_Authorisation" value="Checked">
+                        <input type="checkbox" class="custom-control-input" name="Electronic_Authorisation" id="Electronic_Authorisation" value="Checked" required>
                         <label class="custom-control-label" for="Electronic_Authorisation">I have reviewed, understand and consent to the <a data-toggle="modal" href="#PrivacyConsent">Privacy Consents and Electronic Authorisation</a></label>
                     </div>
                     {{--<div class="custom-control custom-checkbox">

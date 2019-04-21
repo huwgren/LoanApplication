@@ -7,10 +7,10 @@
 <div class="container" >
 
     <br>
-    Reference ID: {{Session::get('ReferenceID')}}
-    <br>
+    <h4>Reference ID: {{Session::get('ReferenceID')}}</h4>
     <br>
 
+    <h3>Loan Details</h3>
     <table class="table table-striped">
         <thead class="thead-dark">
             <tr>
@@ -26,6 +26,7 @@
         @endforeach
     </table>
 
+    <h3>Personal Details</h3>
     <table class="table table-striped">
         <thead class="thead-dark">
         <tr>
@@ -41,6 +42,7 @@
         @endforeach
     </table>
 
+    <h3>Financial Details</h3>
     <table class="table table-striped">
         <thead class="thead-dark">
         <tr>
@@ -56,6 +58,7 @@
         @endforeach
     </table>
 
+    <h3>Acknowledgments</h3>
     <table class="table table-striped">
         <thead class="thead-dark">
         <tr>

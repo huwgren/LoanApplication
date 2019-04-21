@@ -69,19 +69,19 @@
                                 <!-- first name -->
                                 <div class="form-group col-lg-3">
                                     <label for="First_Name">First name</label>
-                                    <input type="text" class="form-control" id="First_Name" name="First_Name" value="{{ session('PersonalDetails.First_Name') }}">
+                                    <input type="text" class="form-control" id="First_Name" name="First_Name" value="{{ session('PersonalDetails.First_Name') }}" required>
                                 </div>
 
                                 <!-- middle name -->
                                 <div class="form-group col-lg-3">
                                     <label for="Middle_Name">Middle name (if any)</label>
-                                    <input type="text" class="form-control" id="Middle_Name" name="Middle_Name" value="{{ session('PersonalDetails.Middle_Name') }}">
+                                    <input type="text" class="form-control" id="Middle_Name" name="Middle_Name" value="{{ session('PersonalDetails.Middle_Name') }}" required>
                                 </div>
 
                                 <!-- last name -->
                                 <div class="form-group col-lg-4">
                                     <label for="Last_Name">Last name</label>
-                                    <input type="text" class="form-control" id="Last_Name" name="Last_Name" value="{{ session('PersonalDetails.Last_Name') }}">
+                                    <input type="text" class="form-control" id="Last_Name" name="Last_Name" value="{{ session('PersonalDetails.Last_Name') }}" required>
                                 </div>
                             </div>
 
@@ -91,19 +91,19 @@
                                 <!-- DOB -->
                                 <div class="form-group col-lg-3">
                                     <label for="DOB">Date of birth</label>
-                                    <input type="text" class="form-control" id="DOB" name="DOB" placeholder="DD/MM/YYYY" value="{{ session('PersonalDetails.DOB') }}">
+                                    <input type="date" class="form-control" id="DOB" name="DOB" placeholder="DD/MM/YYYY" value="{{ session('PersonalDetails.DOB') }}" required>
                                 </div>
 
                                 <!-- drivers licence number -->
                                 <div class="form-group col-lg-3">
                                     <label for="Drivers_Licence_Number">Drivers licence number</label>
-                                    <input type="text" class="form-control" id="Drivers_Licence_Number" name="Drivers_Licence_Number" value="{{ session('PersonalDetails.Drivers_Licence_Number') }}">
+                                    <input type="number" class="form-control" id="Drivers_Licence_Number" name="Drivers_Licence_Number" value="{{ session('PersonalDetails.Drivers_Licence_Number') }}" required>
                                 </div>
 
                                 <!-- licence state of issue -->
                                 <div class="form-group col-lg-2">
                                     <label for="Drivers_Licence_State_Issue">State of issue</label>
-                                    <select class="form-control" id="Drivers_Licence_State_Issue" name="Drivers_Licence_State_Issue" value="{{ session('PersonalDetails.Drivers_Licence_State_Issue') }}">
+                                    <select class="form-control" id="Drivers_Licence_State_Issue" name="Drivers_Licence_State_Issue" value="{{ session('PersonalDetails.Drivers_Licence_State_Issue') }}" required>
                                         <option value="" >Please Select</option>
                                         <option value="NSW" {{ session('PersonalDetails.Drivers_Licence_State_Issue')=='NSW' ? 'selected' : '' }}>NSW</option>
                                         <option value="QLD" {{ session('PersonalDetails.Drivers_Licence_State_Issue')=='QLD' ? 'selected' : '' }}>QLD</option>
@@ -119,7 +119,7 @@
                                 <!-- preferred contact number -->
                                 <div class="form-group col-lg-3">
                                     <label for="Preferred_Contact_Number">Preferred contact number</label>
-                                    <input type="text" class="form-control" id="Preferred_Contact_Number" name="Preferred_Contact_Number" value="{{ session('PersonalDetails.Preferred_Contact_Number') }}">
+                                    <input type="tel"  class="form-control" id="Preferred_Contact_Number" name="Preferred_Contact_Number" value="{{ session('PersonalDetails.Preferred_Contact_Number') }}" required>
                                 </div>
                             </div>
 
@@ -184,7 +184,7 @@
 
                             <div class="form-group row col-lg-8">
                                 <label for="Residential_Address">Address</label>
-                                <input type="text" class="form-control" id="Residential_Address" name="Residential_Address" placeholder="e.g. Unit 3, 1234 Main St, Sydney, NSW, 2000" value="{{ session('PersonalDetails.Residential_Address') }}">
+                                <input type="text" class="form-control" id="Residential_Address" name="Residential_Address" placeholder="e.g. Unit 3, 1234 Main St, Sydney, NSW, 2000" value="{{ session('PersonalDetails.Residential_Address') }}" required>
                                 <small class="form-text text-muted mb-1" >This is your postal address as well and cannot be a PO Box</small>
                             </div>
 
@@ -242,13 +242,13 @@
                                 <!-- employers name -->
                                 <div class="form-group col-lg-4">
                                     <label for="Current_Employers_Name">Employer's name</label>
-                                    <input type="text" class="form-control" id="Current_Employers_Name" name="Current_Employers_Name" value="{{ session('PersonalDetails.Current_Employers_Name') }}">
+                                    <input type="text" class="form-control" id="Current_Employers_Name" name="Current_Employers_Name" value="{{ session('PersonalDetails.Current_Employers_Name') }}" required>
                                 </div>
 
                                 <!-- employers phone number -->
                                 <div class="form-group col-lg-3">
                                     <label for="Current_Employers_Phone">Employer's phone number</label>
-                                    <input type="text" class="form-control" id="Current_Employers_Phone" name="Current_Employers_Phone" value="{{ session('PersonalDetails.Current_Employers_Phone') }}">
+                                    <input type="text" class="form-control" id="Current_Employers_Phone" name="Current_Employers_Phone" value="{{ session('PersonalDetails.Current_Employers_Phone') }}" required>
                                 </div>
 
                             </div>
