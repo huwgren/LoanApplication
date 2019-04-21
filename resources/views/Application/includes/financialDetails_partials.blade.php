@@ -7,18 +7,18 @@
 
 {{--Government Benefits--}}
 <div id="governmentBenefits_input" class="form-group row col-lg-8">
-    <label for="governmentBenefits">Amount</label>
+    <label for="Government_Benefits_Income">Amount</label>
     <div class="input-group">
         <div class="input-group-prepend">
             <span class="input-group-text">$</span>
         </div>
-        <input type="text" class="form-control" id="governmentBenefits">
+        <input type="text" class="form-control" id="Government_Benefits_Income" name="Government_Benefits_Income" value="{{ session('FinancialDetails.Government_Benefits_Income') }}">
         <div class="input-group-append">
-            <select id="governmentBenefits_periodicity" name="governmentBenefits_periodicity" class="form-control btn btn-outline-secondary">
-                <option value="weekly" >Weekly</option>
-                <option value="fornightly" >Fornightly</option>
-                <option value="monthly" >Monthly</option>
-                <option value="yearly" >Yearly</option>
+            <select id="Government_Benefits_Income_Frequency" name="Government_Benefits_Income_Frequency" class="form-control btn btn-outline-secondary">
+                <option value="week" {{ session('FinancialDetails.Government_Benefits_Income_Frequency')=='week' ? 'selected' : '' }}>Week</option>
+                <option value="fortnight" {{ session('FinancialDetails.Government_Benefits_Income_Frequency')=='fortnight' ? 'selected' : '' }}>Fortnight</option>
+                <option value="month" {{ session('FinancialDetails.Government_Benefits_Income_Frequency')=='month' ? 'selected' : '' }}>Month</option>
+                <option value="year" {{ session('FinancialDetails.Government_Benefits_Income_Frequency')=='year' ? 'selected' : '' }}>Year</option>
             </select>
         </div>
     </div>
@@ -26,18 +26,18 @@
 
 {{--Rental Income--}}
 <div id="rentalIncome_input" class="form-group row col-lg-8">
-    <label for="rentalIncome">Amount</label>
+    <label for="Rental_Income">Amount</label>
     <div class="input-group">
         <div class="input-group-prepend">
             <span class="input-group-text">$</span>
         </div>
-        <input type="text" class="form-control" id="rentalIncome">
+        <input type="text" class="form-control" id="Rental_Income" name="Rental_Income" value="{{ session('FinancialDetails.Rental_Income') }}">
         <div class="input-group-append">
-            <select id="rentalIncome_periodicity" name="rentalIncome_periodicity" class="form-control btn btn-outline-secondary">
-                <option value="weekly" >Weekly</option>
-                <option value="fornightly" >Fornightly</option>
-                <option value="monthly" >Monthly</option>
-                <option value="yearly" >Yearly</option>
+            <select id="Rental_Income_Frequency" name="Rental_Income_Frequency" class="form-control btn btn-outline-secondary">
+                <option value="week" {{ session('FinancialDetails.Rental_Income_Frequency')=='week' ? 'selected' : '' }}>Week</option>
+                <option value="fortnight" {{ session('FinancialDetails.Rental_Income_Frequency')=='fortnight' ? 'selected' : '' }}>Fortnight</option>
+                <option value="month" {{ session('FinancialDetails.Rental_Income_Frequency')=='month' ? 'selected' : '' }}>Month</option>
+                <option value="year" {{ session('FinancialDetails.Rental_Income_Frequency')=='year' ? 'selected' : '' }}>Year</option>
             </select>
         </div>
     </div>
@@ -45,18 +45,18 @@
 
 {{--Other Income--}}
 <div id="otherIncome_input" class="form-group row col-lg-8">
-    <label for="otherIncome">Amount</label>
+    <label for="Other_Income">Amount</label>
     <div class="input-group">
         <div class="input-group-prepend">
             <span class="input-group-text">$</span>
         </div>
-        <input type="text" class="form-control" id="otherIncome">
+        <input type="text" class="form-control" id="Other_Income" name="Other_Income" value="{{ session('FinancialDetails.Other_Income') }}">
         <div class="input-group-append">
-            <select id="otherIncome_periodicity" name="otherIncome_periodicity" class="form-control btn btn-outline-secondary">
-                <option value="weekly" >Weekly</option>
-                <option value="fornightly" >Fornightly</option>
-                <option value="monthly" >Monthly</option>
-                <option value="yearly" >Yearly</option>
+            <select id="Other_Income_Frequency" name="Other_Income_Frequency" class="form-control btn btn-outline-secondary">
+                <option value="week" {{ session('FinancialDetails.Other_Income_Frequency')=='week' ? 'selected' : '' }}>Week</option>
+                <option value="fortnight" {{ session('FinancialDetails.Other_Income_Frequency')=='fortnight' ? 'selected' : '' }}>Fortnight</option>
+                <option value="month" {{ session('FinancialDetails.Other_Income_Frequency')=='month' ? 'selected' : '' }}>Month</option>
+                <option value="year" {{ session('FinancialDetails.Other_Income_Frequency')=='year' ? 'selected' : '' }}>Year</option>
             </select>
         </div>
     </div>
@@ -75,18 +75,18 @@
 
         <!-- Home loan repayments -->
         <div class="form-group col-lg-6">
-            <label for="homeLoan_repayments">Total repayments for all home loans</label>
+            <label for="Home_Loan_Repayments">Total repayments for all home loans</label>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                 </div>
-                <input type="text" class="form-control" id="homeLoan_repayments">
+                <input type="text" class="form-control" id="Home_Loan_Repayments" name="Home_Loan_Repayments" value="{{ session('FinancialDetails.Home_Loan_Repayments') }}">
                 <div class="input-group-append">
-                    <select id="homeLoanRepayments_periodicity" name="homeLoanRepayments_periodicity" class="form-control btn btn-outline-secondary">
-                        <option value="weekly" >Weekly</option>
-                        <option value="fornightly" >Fornightly</option>
-                        <option value="monthly" >Monthly</option>
-                        <option value="yearly" >Yearly</option>
+                    <select id="Home_Loan_Repayments_Frequency" name="Home_Loan_Repayments_Frequency" class="form-control btn btn-outline-secondary">
+                        <option value="week" {{ session('FinancialDetails.Home_Loan_Repayments_Frequency')=='week' ? 'selected' : '' }}>Week</option>
+                        <option value="fortnight" {{ session('FinancialDetails.Home_Loan_Repayments_Frequency')=='fortnight' ? 'selected' : '' }}>Fortnight</option>
+                        <option value="month" {{ session('FinancialDetails.Home_Loan_Repayments_Frequency')=='month' ? 'selected' : '' }}>Month</option>
+                        <option value="year" {{ session('FinancialDetails.Home_Loan_Repayments_Frequency')=='year' ? 'selected' : '' }}>Year</option>
                     </select>
                 </div>
             </div>
@@ -94,12 +94,12 @@
 
         <!-- Home loan owing -->
         <div class="form-group col-lg-4">
-            <label for="homeLoan_balance">Total owing for all home loans</label>
+            <label for="Home_Loan_Balance">Total owing for all home loans</label>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                 </div>
-                <input type="text" class="form-control" id="homeLoan_balance">
+                <input type="text" class="form-control" id="Home_Loan_Balance" name="Home_Loan_Balance" value="{{ session('FinancialDetails.Home_Loan_Balance') }}">
             </div>
         </div>
     </div>
@@ -112,18 +112,18 @@
 
         <!-- Personal loan repayments -->
         <div class="form-group col-lg-6">
-            <label for="personalLoan_repayments">Total repayments for all personal loans</label>
+            <label for="Personal_Loan_Repayments">Total repayments for all personal loans</label>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                 </div>
-                <input type="text" class="form-control" id="personalLoan_repayments">
+                <input type="text" class="form-control" id="Personal_Loan_Repayments" name="Personal_Loan_Repayments" value="{{ session('FinancialDetails.Personal_Loan_Repayments') }}">
                 <div class="input-group-append">
-                    <select id="personalLoanRepayments_periodicity" name="personalLoanRepayments_periodicity" class="form-control btn btn-outline-secondary">
-                        <option value="weekly" >Weekly</option>
-                        <option value="fornightly" >Fornightly</option>
-                        <option value="monthly" >Monthly</option>
-                        <option value="yearly" >Yearly</option>
+                    <select id="Personal_Loan_Repayments_Frequency" name="Personal_Loan_Repayments_Frequency" class="form-control btn btn-outline-secondary">
+                        <option value="week" {{ session('FinancialDetails.Personal_Loan_Repayments_Frequency')=='week' ? 'selected' : '' }}>Week</option>
+                        <option value="fortnight" {{ session('FinancialDetails.Personal_Loan_Repayments_Frequency')=='fortnight' ? 'selected' : '' }}>Fortnight</option>
+                        <option value="month" {{ session('FinancialDetails.Personal_Loan_Repayments_Frequency')=='month' ? 'selected' : '' }}>Month</option>
+                        <option value="year" {{ session('FinancialDetails.Personal_Loan_Repayments_Frequency')=='year' ? 'selected' : '' }}>Year</option>
                     </select>
                 </div>
             </div>
@@ -131,12 +131,12 @@
 
         <!-- Personal loan owing -->
         <div class="form-group col-lg-4">
-            <label for="personalLoan_balance">Total owing for all personal loans</label>
+            <label for="Personal_Loan_Balance">Total owing for all personal loans</label>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                 </div>
-                <input type="text" class="form-control" id="personalLoan_balance">
+                <input type="text" class="form-control" id="Personal_Loan_Balance" name="Personal_Loan_Balance" value="{{ session('FinancialDetails.Personal_Loan_Balance') }}">
             </div>
         </div>
     </div>
@@ -149,23 +149,23 @@
 
         <!-- Credit Cards owing -->
         <div class="form-group col-lg-4">
-            <label for="creditCards_owings">Total owing for all credit cards</label>
+            <label for="Credit_Cards_Owing">Total owing for all credit cards</label>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                 </div>
-                <input type="text" class="form-control" id="creditCards_owings">
+                <input type="text" class="form-control" id="Credit_Cards_Owing" name="Credit_Cards_Owing" value="{{ session('FinancialDetails.Credit_Cards_Owing') }}">
             </div>
         </div>
 
         <!-- Credit cards maximum -->
         <div class="form-group col-lg-4">
-            <label for="creditCards_maxLimit" style="white-space: nowrap">What is the total maximum limit of all credit cards</label>
+            <label for="Credit_Cards_Limit" style="white-space: nowrap">What is the total maximum limit of all credit cards</label>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                 </div>
-                <input type="text" class="form-control" id="creditCards_maxLimit">
+                <input type="text" class="form-control" id="Credit_Cards_Limit" name="Credit_Cards_Limit" value="{{ session('FinancialDetails.Credit_Cards_Limit') }}">
             </div>
         </div>
     </div>
