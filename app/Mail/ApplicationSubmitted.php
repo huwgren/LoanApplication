@@ -28,7 +28,7 @@ class ApplicationSubmitted extends Mailable
      */
     public function build()
     {
-        return $this->from('example@example.com')
+        return $this->from('loans@saltandlime.com.au')
                     ->view('Application.emails.test');
     }
 }

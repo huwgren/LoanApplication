@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ApplicationSubmitted;
+use function GuzzleHttp\Promise\all;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
@@ -22,19 +23,34 @@ class LoanApplicationController extends Controller
     public function LoanDetails_View(Request $request)
     {
 
-        if (session('Step1')!='Completed'){
+        //clear all session data
+        Session::flush();
+        Session::regenerate();
 
-            //clear all session data on first load
+        if (session('Step1')=='Completed'){
+
+            //Retrieve loan details from session
+            $loan_details = $request->session()->get('LoanDetails');
+
+            //return view
+            return view('Application.pages.LoanDetails',compact('loan_details',$loan_details));
+
+
+
+        } else {
+
+            //clear all session data
             Session::flush();
             Session::regenerate();
 
+            //Retrieve loan details from session
+            $loan_details = $request->session()->get('LoanDetails');
+
+            //return view
+            return view('Application.pages.LoanDetails',compact('loan_details',$loan_details));
         }
 
-        //Retrieve loan details from session
-        $loan_details = $request->session()->get('LoanDetails');
 
-        //return view
-        return view('Application.pages.LoanDetails',compact('loan_details',$loan_details));
     }
 
 
@@ -122,8 +138,10 @@ class LoanApplicationController extends Controller
     public function NextSteps_View(Request $request)
     {
         if (session('ReviewStep')=='Completed'){
+
             //return view
             return view('Application.pages.NextSteps');
+
         } else {
             //return to Financial Details page
             return redirect()->action('LoanApplicationController@ReviewDetails_View');
@@ -214,7 +232,7 @@ class LoanApplicationController extends Controller
         Session::put('ReferenceID', $date);
 
         //set a variable to be equal a entry from the session array
-        $email='huw.grenfell@saltandlime.com.au';
+        $email='loanapplications@saltandlime.com.au';
         /*$email=Session::get('LoanDetails.Email_Address');*/
 
         /*return view('Application.emails.test');*/

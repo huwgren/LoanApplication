@@ -187,13 +187,25 @@
                         {{--Home Loan Repayments--}}
                         <div class="form-group col-lg-4">
                             <label for="homeLoan_repayments">Mortgage repayments</label>
-                            <input type="text" readonly class="font-weight-bold form-control-plaintext mt-n3" id="homeLoan_repayments" value="${{number_format(Session::get('FinancialDetails.Home_Loan_Repayments'),0)}} / {{Session::get('FinancialDetails.Home_Loan_Repayments_Frequency')}}">
+                            <input type="text" readonly class="font-weight-bold form-control-plaintext mt-n3" id="homeLoan_repayments"
+                                   @if (Session::has('FinancialDetails.Home_Loan_Repayments'))
+                                   value="${{number_format(Session::get('FinancialDetails.Home_Loan_Repayments'),0)}} / {{Session::get('FinancialDetails.Home_Loan_Repayments_Frequency')}}"
+                                   @else
+                                   value="na"
+                                   @endif
+                                   >
                         </div>
 
                         {{--Home Loan Balance--}}
                         <div class="form-group col-lg-3">
                             <label for="homeLoan_balance">Mortgage balance</label>
-                            <input type="text" readonly class="font-weight-bold form-control-plaintext mt-n3" id="homeLoan_balance" value="${{number_format(Session::get('FinancialDetails.Home_Loan_Balance'),0)}}">
+                            <input type="text" readonly class="font-weight-bold form-control-plaintext mt-n3" id="homeLoan_balance"
+                                    @if (Session::has('FinancialDetails.Home_Loan_Balance'))
+                                        value="${{number_format(Session::get('FinancialDetails.Home_Loan_Balance'),0)}}"
+                                    @else
+                                        value="na"
+                                    @endif
+                            >
                         </div>
 
                         {{--Personal Loan--}}
@@ -205,13 +217,27 @@
                         {{--Personal Loan Repayments--}}
                         <div class="form-group col-lg-4">
                             <label for="personalLoan_repayments">Personal loan repayments</label>
-                            <input type="text" readonly class="font-weight-bold form-control-plaintext mt-n3" id="personalLoan_repayments" value="${{number_format(Session::get('FinancialDetails.Personal_Loan_Repayments'),0)}} / {{Session::get('FinancialDetails.Personal_Loan_Repayments_Frequency')}}">
+                            <input type="text" readonly class="font-weight-bold form-control-plaintext mt-n3" id="personalLoan_repayments"
+
+                                    @if (Session::has('FinancialDetails.Personal_Loan_Repayments'))
+                                        value="${{number_format(Session::get('FinancialDetails.Personal_Loan_Repayments'),0)}} / {{Session::get('FinancialDetails.Personal_Loan_Repayments_Frequency')}}"
+                                    @else
+                                        value="na"
+                                    @endif
+                            >
                         </div>
 
                         {{--Personal Loan Balance--}}
                         <div class="form-group col-lg-3">
                             <label for="personalLoan_balance">Personal loan balance</label>
-                            <input type="text" readonly class="font-weight-bold form-control-plaintext mt-n3" id="personalLoan_balance" value="${{number_format(Session::get('FinancialDetails.Personal_Loan_Balance'),0)}}">
+                            <input type="text" readonly class="font-weight-bold form-control-plaintext mt-n3" id="personalLoan_balance"
+
+                                @if (Session::has('FinancialDetails.Personal_Loan_Balance'))
+                                    value="${{number_format(Session::get('FinancialDetails.Personal_Loan_Balance'),0)}}"
+                                @else
+                                    value="na"
+                                @endif
+                            >
                         </div>
 
                         {{--Credit cards--}}
@@ -223,13 +249,27 @@
                         {{--Credit card amount owing--}}
                         <div class="form-group col-lg-4">
                             <label for="creditCards_owings">Amount owing on credit cards</label>
-                            <input type="text" readonly class="font-weight-bold form-control-plaintext mt-n3" id="creditCards_owings" value="${{number_format(Session::get('FinancialDetails.Credit_Cards_Owing'),0)}}">
+                            <input type="text" readonly class="font-weight-bold form-control-plaintext mt-n3" id="creditCards_owings"
+
+                            @if (Session::has('FinancialDetails.Credit_Cards_Owing'))
+                                value="${{number_format(Session::get('FinancialDetails.Credit_Cards_Owing'),0)}}"
+                            @else
+                                value="na"
+                            @endif
+                            >
                         </div>
 
                         {{--Credit card max limit--}}
                         <div class="form-group col-lg-3">
                             <label for="creditCards_maxLimit">Credit card limit</label>
-                            <input type="text" readonly class="font-weight-bold form-control-plaintext mt-n3" id="creditCards_maxLimit" value="${{number_format(Session::get('FinancialDetails.Credit_Cards_Limit'),0)}}">
+                            <input type="text" readonly class="font-weight-bold form-control-plaintext mt-n3" id="creditCards_maxLimit"
+
+                                @if (Session::has('FinancialDetails.Credit_Cards_Limit'))
+                                    value="${{number_format(Session::get('FinancialDetails.Credit_Cards_Limit'),0)}}"
+                                @else
+                                    value="na"
+                                @endif
+                            >
                         </div>
 
                     </div>
