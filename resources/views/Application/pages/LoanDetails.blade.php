@@ -44,6 +44,16 @@
 
                     <form class=" needs-validation" method="post" action="/Step1" novalidate>
 
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
                         @csrf
 
                         <!-- SECTION HEADER - email - -->
@@ -54,7 +64,7 @@
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <label for="Email_Address">Email</label>
-                                    <input type="email" class="form-control" id="Email_Address" name="Email_Address" placeholder="Email" value="{{--{{ session('LoanDetails.Email_Address') }}--}}" required>
+                                    <input type="email" class="form-control" id="Email_Address" name="Email_Address" placeholder="Email" value="{{ session('LoanDetails.Email_Address') }}" {{--required--}}>
                                 </div>
                             </div>
 
@@ -72,7 +82,7 @@
                                 <!-- loan reason -->
                                 <div class="form-group col-lg-4">
                                     <label for="Loan_Reason">Primary Loan Reason</label>
-                                    <select class="form-control" id="Loan_Reason" name="Loan_Reason" required>
+                                    <select class="form-control" id="Loan_Reason" name="Loan_Reason" {{--required--}}>
                                         <option value="" >Please Select</option>
                                         <optgroup label="Financial">
                                             <option value="Debt consolidation" {{ session('LoanDetails.Loan_Reason')=='Debt consolidation' ? 'selected' : '' }}>Debt consolidation</option>

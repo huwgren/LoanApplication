@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Carbon\Carbon;
+use Validator;
 
 
 
@@ -20,14 +21,14 @@ class LoanApplicationController extends Controller
      */
     public function LoanDetails_View(Request $request)
     {
-        /*dd(Session::get('FinancialDetails'));*/
 
-        //clear all session data
-        Session::flush();
+        if (session('Step1')!='Completed'){
 
-        Session::regenerate();
+            //clear all session data on first load
+            Session::flush();
+            Session::regenerate();
 
-        /*dd(Session::get('LoanDetails'));*/
+        }
 
         //Retrieve loan details from session
         $loan_details = $request->session()->get('LoanDetails');
@@ -139,6 +140,11 @@ class LoanApplicationController extends Controller
      */
     public function LoanDetails_Store(Request $request)
     {
+        $validatedData = $request->validate([
+            'Email_Address' => 'required',
+            'Loan_Reason' => 'required',
+        ]);
+
         // Store the user form data into the session
         Session::put('LoanDetails',$request->all());
 
