@@ -214,7 +214,8 @@ class LoanApplicationController extends Controller
         Session::put('ReferenceID', $date);
 
         //set a variable to be equal a entry from the session array
-        $email=Session::get('LoanDetails.Email_Address');
+        $email='huw.grenfell@saltandlime.com.au';
+        /*$email=Session::get('LoanDetails.Email_Address');*/
 
         /*return view('Application.emails.test');*/
 
