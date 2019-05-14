@@ -46,7 +46,7 @@
 
                     <div class="offset-md-1 col-md-10 text-left">
                         <p class="card-text">If we need further information, we'll let you know within 2-3 working days.</p>
-                        <p class="card-text">If you have further enquiries, please contact our Customer Care Team on 1300 123 123 or at CustomerCare@saltandlime.com.au.</p>
+                        <p class="card-text">If you have further enquiries, please contact our Customer Care Team at CustomerCare@saltandlime.com.au.</p>
                     </div>
 
                 </div>

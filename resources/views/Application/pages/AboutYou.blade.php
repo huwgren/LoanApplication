@@ -75,7 +75,7 @@
                                 <!-- middle name -->
                                 <div class="form-group col-lg-3">
                                     <label for="Middle_Name">Middle name (if any)</label>
-                                    <input type="text" class="form-control" id="Middle_Name" name="Middle_Name" value="{{ session('PersonalDetails.Middle_Name') }}" required>
+                                    <input type="text" class="form-control" id="Middle_Name" name="Middle_Name" value="{{ session('PersonalDetails.Middle_Name') }}">
                                 </div>
 
                                 <!-- last name -->
@@ -97,13 +97,13 @@
                                 <!-- drivers licence number -->
                                 <div class="form-group col-lg-3">
                                     <label for="Drivers_Licence_Number">Drivers licence number</label>
-                                    <input type="number" class="form-control" id="Drivers_Licence_Number" name="Drivers_Licence_Number" value="{{ session('PersonalDetails.Drivers_Licence_Number') }}" required>
+                                    <input type="number" class="form-control" id="Drivers_Licence_Number" name="Drivers_Licence_Number" value="{{ session('PersonalDetails.Drivers_Licence_Number') }}" >
                                 </div>
 
                                 <!-- licence state of issue -->
                                 <div class="form-group col-lg-2">
                                     <label for="Drivers_Licence_State_Issue">State of issue</label>
-                                    <select class="form-control" id="Drivers_Licence_State_Issue" name="Drivers_Licence_State_Issue" value="{{ session('PersonalDetails.Drivers_Licence_State_Issue') }}" required>
+                                    <select class="form-control" id="Drivers_Licence_State_Issue" name="Drivers_Licence_State_Issue" value="{{ session('PersonalDetails.Drivers_Licence_State_Issue') }}" >
                                         <option value="" >Please Select</option>
                                         <option value="NSW" {{ session('PersonalDetails.Drivers_Licence_State_Issue')=='NSW' ? 'selected' : '' }}>NSW</option>
                                         <option value="QLD" {{ session('PersonalDetails.Drivers_Licence_State_Issue')=='QLD' ? 'selected' : '' }}>QLD</option>
