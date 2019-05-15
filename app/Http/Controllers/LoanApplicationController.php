@@ -14,6 +14,25 @@ use Validator;
 
 class LoanApplicationController extends Controller
 {
+
+    /**
+     * Return Intro view
+     *
+     * @param  Request  $request
+     * @return Response
+     */
+    public function Intro_View(Request $request)
+    {
+
+        //clear all session data
+        Session::flush();
+        Session::regenerate();
+
+        //return view
+        return view('Application.pages.Intro');
+
+    }
+
     /**
      * Return view for the loan details
      *
@@ -23,9 +42,9 @@ class LoanApplicationController extends Controller
     public function LoanDetails_View(Request $request)
     {
 
-        //clear all session data
+        /*//clear all session data
         Session::flush();
-        Session::regenerate();
+        Session::regenerate();*/
 
         if (session('Step1')=='Completed'){
 
@@ -39,9 +58,9 @@ class LoanApplicationController extends Controller
 
         } else {
 
-            //clear all session data
+            /*//clear all session data
             Session::flush();
-            Session::regenerate();
+            Session::regenerate();*/
 
             //Retrieve loan details from session
             $loan_details = $request->session()->get('LoanDetails');

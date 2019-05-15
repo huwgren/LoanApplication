@@ -12,11 +12,11 @@
 */
 
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('Application.pages.Intro');
-});
+});*/
 
-
+Route::get('/', 'LoanApplicationController@Intro_View');
 
 Route::get('/Step1', 'LoanApplicationController@LoanDetails_View');
 Route::post('/Step1', 'LoanApplicationController@LoanDetails_Store');
