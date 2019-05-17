@@ -268,21 +268,11 @@
             // Look up the input and output elements in the document
             var amount = document.getElementById("Loan_Amount");
             var apr = 9;
-            //var durationMths = document.getElementById("loanDuration");
-            var total = document.getElementById("total");
-            var totalinterest = document.getElementById("totalinterest");
 
-
-            // Get the user's input from the input elements.
-            // Assume it is all valid.  Convert interest from
-            // a percentage to a decimal, and convert from an
-            // annual rate to a monthly rate.  Convert payment
-            // period in years to the number of monthly
-            // payments.
 
             var principal = parseFloat(amount.value);
-            var interest = parseFloat(apr) / 100 / 12;
-            var numPayments = parseFloat(durationMths/12*pay_frequency);
+            var interest = parseFloat(apr) / 100 / pay_frequency;
+            var numPayments = Math.floor(parseFloat(durationMths/12*pay_frequency));
 
             // Now compute the monthly payment figure.
             var x = Math.pow(1 + interest, numPayments); // Math.pow() computes powers
@@ -330,8 +320,8 @@
             // payments.
 
             var principal = parseFloat(amount.value);
-            var interest = parseFloat(apr) / 100 / 12;
-            var numPayments = parseFloat(durationMths/12*pay_frequency);
+            var interest = parseFloat(apr) / 100 / pay_frequency;
+            var numPayments = Math.floor(parseFloat(durationMths/12*pay_frequency));
 
 
             // Now compute the monthly payment figure.
@@ -376,8 +366,8 @@
             // payments.
 
             var principal = parseFloat(amount.value);
-            var interest = parseFloat(apr) / 100 / 12;
-            var numPayments = parseFloat(durationMths/12*pay_frequency);
+            var interest = parseFloat(apr) / 100 / pay_frequency;
+            var numPayments = Math.floor(parseFloat(durationMths/12*pay_frequency));
 
 
             // Now compute the monthly payment figure.
