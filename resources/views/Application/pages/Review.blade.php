@@ -304,6 +304,12 @@
                             <input type="text" readonly class="font-weight-bold form-control-plaintext mt-n3" id="preferredContactNumber" value="{{Session::get('PersonalDetails.Preferred_Contact_Number')}}">
                         </div>
 
+                        {{--Email address--}}
+                        <div class="form-group col-lg-3">
+                            <label for="Email_Address">Email Address</label>
+                            <input type="email" readonly class="font-weight-bold form-control-plaintext mt-n3" id="Email_Address" value="{{ session('LoanDetails.Email_Address') }}">
+                        </div>
+
                         {{--Martial status--}}
                         <div class="form-group col-lg-3">
                             <label for="martialStatus">Martial status</label>

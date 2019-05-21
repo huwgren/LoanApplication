@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ApplicationReceived;
 use App\Mail\ApplicationSubmitted;
 use function GuzzleHttp\Promise\all;
 use Illuminate\Http\Request;
@@ -251,14 +252,20 @@ class LoanApplicationController extends Controller
         Session::put('ReferenceID', $date);
 
         //set a variable to be equal a entry from the session array
-        $email='loanapplications@saltandlime.com.au';
+
         /*$email=Session::get('LoanDetails.Email_Address');*/
 
         /*return view('Application.emails.test');*/
 
-        //Mail the applicant's details
+        //Mail the applicant's details to us
+        $email='huw.grenfell@saltandlime.com.au';
         Mail::to($email)
             ->send(new ApplicationSubmitted());
+
+        //Mail the applicant's details
+        $userEmail=Session::get('LoanDetails.Email_Address');
+        Mail::to($userEmail)
+            ->send(new ApplicationReceived());
 
         // return view
         return redirect('/NextSteps');

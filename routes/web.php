@@ -55,7 +55,13 @@ Route::get('/testing', function () {
     return view('Application.testing');
 });
 
+Route::get('/welcome', function () {
+    return view('vendor.notifications.Welcome');
+});
 
+Route::get('/mailable', function () {
+    return new App\Mail\ApplicationReceived();
+});
 
 
 Route::get('/template', function () {
