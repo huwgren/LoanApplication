@@ -258,8 +258,9 @@ class LoanApplicationController extends Controller
         /*return view('Application.emails.test');*/
 
         //Mail the applicant's details to us
-        $email='huw.grenfell@saltandlime.com.au';
-        Mail::to($email)
+        $emails=['huw.grenfell@saltandlime.com.au','will.kiln@saltandlime.com.au','kate.kiln@saltandlime.com.au'];
+        Mail::to($emails)
+            ->cc('loanapplications@saltandlime.com.au')
             ->send(new ApplicationSubmitted());
 
         //Mail the applicant's details
